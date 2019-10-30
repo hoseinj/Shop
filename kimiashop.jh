@@ -1,0 +1,725 @@
+entity Address {
+  firstName String,
+  lastName String,
+  company String,
+  password String,
+  address1 String,
+  address2 String,
+  postcode String,
+  city String,
+  state String,
+  addressType Long,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Banner {
+  title String,
+  url String,
+  link String,
+  content String,
+  position String,
+  image String,
+  imagePath String,
+  containerName String,
+  viewPageCount String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+
+entity BannerGroup {
+  title String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity BannerImageDescription {
+  title String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Category {
+ name String,
+ image String,
+ imagePath String,
+ parentInt Long,
+ sortOrder Long,
+ metaTagTitle String,
+ metaTagDescription String,
+ metaTagKeyword String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity CategoryDescription {
+ name String,
+ description String ,
+ metaDescroption String,
+ metaKeyword String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity CategoryPath {
+ level Long,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Contact {
+ name String,
+ email String,
+ phoneNumber String,
+ message String,
+   isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Country {
+ name String,
+ isoCode2 String,
+ isoCode3 String,
+ addressFormat String,
+ postCodeRequired Integer,
+   isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Currency {
+ title String,
+ code String,
+ symbolLeft String,
+ symbolRight String,
+ decimalPlace Integer,
+ value Float,
+   isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Customer {
+ firstName String,
+ lastName String,
+ username String,
+ email String,
+ password String,
+ mobile String,
+ address String,
+ city String,
+ pincode String,
+ avatar String,
+ avatarPath String,
+ mailStatus Integer,
+ deleteFlag Integer,
+ lastlogin String,
+ newsletter Long,
+ safe Long,
+ ip String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity CustomerGroup {
+  name String,
+  description String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity CustomerIp {
+ ip String,
+ dateAdded String,
+   isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+entity CustomerTransaction {
+ description String,
+ amount BigDecimal,
+   isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity CustomerWishlist {
+  
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity EmailTemplate {
+ shortName String,
+ subject String,
+ message String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity GeoZone{
+ name String,
+ description String,
+   isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Language {
+	name String,
+    code String,
+    image String,
+    imagePath String,
+    locale String,
+    sortOrder String,
+      isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity LoginLog {
+ firstName String,
+ ipAddress String,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Manufacturer {
+ name String,
+ image String,
+ imagePath String,
+ sortOrder Integer,
+   isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Migrations {
+ timestamp BigDecimal,
+ name String,
+ invoiceNo String,
+ invoicePrefix String,
+ firstname String,
+ lastname String,
+ email String,
+ telephone String,
+ fax String,
+ shippingFirstname String,
+ shippingLastname String,
+ shippingCompany String,
+ shippingAddress1 String,
+ shippingAddress2 String,
+ shippingCity String,
+ shippingPostcode String,
+ shippingCountry String,
+ shippingZone String,
+ shippingAddressFormat String,
+ shippingMethod String,
+ paymentFirstname String,
+ paymentLastname String,
+ paymentCompany String,
+ paymentAddress1 String,
+ paymentAddress2 String,
+ paymentCity String,
+ paymentPostcode String,
+ paymentCountry String,
+ paymentZone String,
+ paymentAddressFormat String,
+ paymentMethod String,
+ comment String,
+ total BigDecimal,
+ reward Integer,
+ commision BigDecimal,
+ currencyCode String,
+ currencyValue BigDecimal,
+ ip String,
+ paymentFlag Integer,
+ orderName String,
+     isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity OrderHistory {
+ notify String,
+ comment String,
+ dateAdded String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity OrderLog {
+invoiceNo String,
+invocePerfix String,
+firstname String,
+lastname String,
+email String,
+telephone String,
+fax String,
+shippingFristname String,
+shippingLastname String,
+ shippingCompany String,
+ shippingAddress1 String,
+ shippingAddress2 String,
+ shippingCity String,
+ shippingPostcode String,
+ shippingCountry String,
+ shippingZone String,
+ shippingAddressFormat String,
+ shippingMethod String,
+ paymentFirstname String,
+ paymentLastname String,
+ paymentCompany String,
+ paymentAddress1 String,
+ paymentAddress2 String,
+ paymentCity String,
+ paymentPostcode String,
+ paymentCountry String,
+ paymentZone String,
+ paymentAddressFormat String,
+ paymentMethod String,
+ comment String,
+ total BigDecimal,
+ reward Integer,
+ commision BigDecimal,
+ currencyCode String,
+ currencyValue BigDecimal,
+ ip String,
+ paymentFlag Integer,
+ orderName String,
+    isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+
+}
+
+entity OrderOption {
+ name String,
+ value String,
+ type String,
+ isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity OrderProduct {
+name String,
+ model String,
+ quantity Integer,
+ trace BigDecimal,
+ total BigDecimal,
+ tax BigDecimal,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity OrderStatus {
+name String,
+ colorCode String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity OrderTotal {
+ code String,
+ title String,
+ text String,
+ value BigDecimal,
+ sortOrder Integer,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity ShopPage {
+ title String,
+ intro String,
+ fullText String,
+ sortOrder Integer,
+ metaTagTitle String,
+ metaTagDescroption String,
+ metaTagKeywords String,
+ viewPageCount Integer,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity PageGroup {
+ title String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Product {
+ sku String,
+ upc String,
+ quantity Integer,
+ image String,
+ imagePath String,
+ shipping Integer,
+ price BigDecimal,
+ dateAvailable String,
+ sortOrder Integer,
+ name String,
+ description String,
+ amount Float,
+ metaTagTitle String,
+ metaTagDescription String,
+ metaTagKeyword String,
+ discount Integer,
+ subtractStock Boolean,
+ minimumQuantity Integer,
+ location String,
+ wishlistStatus Integer,
+ deletFlag String,
+ isFeatured Integer,
+ rating Integer,
+ condition Integer,
+ isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity PorductDescription {
+name String,
+description String,
+metaDescription String,
+metaKeyword String,
+ isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity ProductDiscount {
+ quantity Integer,
+ priority Integer,
+ pirce BigDecimal,
+ dateStart String,
+ dateEnd String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity ProductImage {
+  image String,
+  containerName String,
+  defualtImage Integer,
+  sortOrder Integer,
+   isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity ProductRating {
+firstname String,
+lastname String,
+email String,
+rating Integer,
+review String,
+imagePath String,
+image String,
+ isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity ProductRelated {
+ isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity ProductTag {
+productTagname String,
+ isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity ProductViewLog {
+firstName String,
+lastName String,
+email String,
+userName String,
+mobile Integer,
+address String,
+ isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Setting {
+ url String,
+ metaTagTitle String,
+ metaTagDescription String,
+ metaTagKeywords String,
+ storeName String,
+ storeOwner String,
+ storeAddress String,
+ storeEmail String,
+ storeTelephone String,
+ storeFax String,
+ storeLogo String,
+ storeLogoPath String,
+ maintenanceMode Integer,
+ storeLanguageName String,
+ storeImage String,
+ storeImagePath String,
+ google String,
+ facebook String,
+ twitter String,
+ instagram String,
+ orderStatus Integer,
+ invoicePrefix String,
+ itemsPerPage Integer,
+ categoryProductCount Integer,
+ isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity StockStatus {
+ name String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity ShopUser {
+ username String,
+ password String,
+ firstName String,
+ lastName String,
+ email String,
+ avatar String,
+ avatarPath String,
+ code String,
+ ip String,
+ address String,
+ phoneNumber Integer,
+  name String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity UserGroup {
+	name String,
+    slug String,
+      isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity Zone {
+code String,
+name String,
+  isActive Integer,
+  createdBy Long,
+  modifiedBy Long,
+  createdDate String,
+  modifiedDate String
+}
+
+entity AccessToken {
+ token String,
+}
+
+entity OrderTotal{
+ value BigDecimal
+}
+
+entity Order {
+
+  invoiceNo String,
+  invoicePrefix String,
+  firstname String,
+  lastname String,
+  email String,
+  telephone Integer,
+  fax String,
+  shippingFirstname String,
+  shippingLastname String,
+  shippingCompany String,
+  shippingAddress1 String,
+  shippingAddress2 String,
+  shippingCity String,
+  shippingPostcode String,
+  shippingCountry String,
+  shippingZone String,
+  shippingAddressFormat String,
+  shippingMethod String,
+  paymentFirstname String,
+  paymentLastname String,
+  paymentCompany String,
+  paymentAddress1 String,
+  paymentAddress2 String,
+  paymentCity String,
+  paymentPostcode String,
+  paymentCountry String,
+  paymentZone String,
+  paymentAddressFormat String,
+  paymentMethod String,
+  comment String,
+  total Integer,
+  reward Integer,
+  commision Integer,
+  currencyCode String,
+  currencyValue Integer,
+  ip String,
+  paymentFlag Integer,
+  orderName  String,
+
+}
+relationship OneToMany {
+Customer to ProductRating,
+Order{porductLists} to OrderProduct,
+Product{categories} to Category,
+Product{productImages} to ProductImage,
+Product{wishLists} to CustomerWishlist,
+Product{productRelatedS} to ProductRelated,
+Product{productRatings} to ProductRating,
+Product{orderProducts} to OrderProduct,
+ShopUser{accessToken(token)} to AccessToken,
+UserGroup{shopUsers} to ShopUser,
+}
+
+relationship ManyToOne {
+AccessToken{shopUserId} to ShopUser,
+Address{customerId} to Customer,
+Address{countryId} to Country,
+Address{zoneId} to Zone,
+Banner{bannerGroupId} to BannerGroup,
+CategoryPath{categoryId} to Category,
+Customer{countryId} to Country,
+Customer{zoneId} to Zone,
+Customer{customerGroupId} to CustomerGroup,
+CustomerWishlist{customerId} to Customer,
+CustomerWishlist{productId} to Product,
+Order{customerId} to Customer,
+Order{currencyId} to Currency,
+Order{orderStatusId} to OrderStatus,
+OrderLog{customerId} to Customer,
+OrderLog{currencyId} to Currency,
+OrderLog{orderStatusId} to OrderStatus,
+OrderProduct{productId} to Product,
+OrderProduct{orderId} to Order,
+OrderTotal{orderId} to Order,
+ProductImage{productId} to Product,
+Product{stockStatusid} to StockStatus,
+Product{manufacturerId} to Manufacturer,
+ProductRating{productId} to Product,
+ProductRating{customerId} to Customer,
+ProductRelated{productId} to Product,
+ProductViewLog{productId} to Product,
+Setting{countryId} to Country,
+Setting{zoneId} to Zone,
+ShopUser{userGroupId} to UserGroup,
+Zone{country} to Country
+}
+
+paginate * with pagination
+dto * with mapstruct
+service all with serviceImpl
+
