@@ -36,7 +36,9 @@
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
-    "blueprints": []
+    "blueprints": [],
+    "herokuAppName": "secure-brook-54874",
+    "herokuDeployType": "git"
   },
   "git-provider": "GitHub",
   "git-company": "hoseinj",
