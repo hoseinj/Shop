@@ -1,0 +1,82 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="shopApp.categoryDescription.home.title">Category Descriptions</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-category-description" [routerLink]="['/category-description/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="shopApp.categoryDescription.home.createLabel">
+            Create a new Category Description
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="categoryDescriptions?.length === 0">
+        <span jhiTranslate="shopApp.categoryDescription.home.notFound">No categoryDescriptions found</span>
+    </div>
+    <div class="table-responsive" *ngIf="categoryDescriptions?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="shopApp.categoryDescription.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="description"><span jhiTranslate="shopApp.categoryDescription.description">Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="metaDescroption"><span jhiTranslate="shopApp.categoryDescription.metaDescroption">Meta Descroption</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="metaKeyword"><span jhiTranslate="shopApp.categoryDescription.metaKeyword">Meta Keyword</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isActive"><span jhiTranslate="shopApp.categoryDescription.isActive">Is Active</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdBy"><span jhiTranslate="shopApp.categoryDescription.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedBy"><span jhiTranslate="shopApp.categoryDescription.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdDate"><span jhiTranslate="shopApp.categoryDescription.createdDate">Created Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedDate"><span jhiTranslate="shopApp.categoryDescription.modifiedDate">Modified Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let categoryDescription of categoryDescriptions ;trackBy: trackId">
+                <td><a [routerLink]="['/category-description', categoryDescription.id, 'view' ]">{{categoryDescription.id}}</a></td>
+                <td>{{categoryDescription.name}}</td>
+                <td>{{categoryDescription.description}}</td>
+                <td>{{categoryDescription.metaDescroption}}</td>
+                <td>{{categoryDescription.metaKeyword}}</td>
+                <td>{{categoryDescription.isActive}}</td>
+                <td>{{categoryDescription.createdBy}}</td>
+                <td>{{categoryDescription.modifiedBy}}</td>
+                <td>{{categoryDescription.createdDate}}</td>
+                <td>{{categoryDescription.modifiedDate}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/category-description', categoryDescription.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/category-description', categoryDescription.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/category-description', { outlets: { popup: categoryDescription.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="categoryDescriptions?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

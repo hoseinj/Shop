@@ -1,0 +1,193 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="order">
+            <h2><span jhiTranslate="shopApp.order.detail.title">Order</span> {{order.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.order.invoiceNo">Invoice No</span></dt>
+                <dd>
+                    <span>{{order.invoiceNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.invoicePrefix">Invoice Prefix</span></dt>
+                <dd>
+                    <span>{{order.invoicePrefix}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.firstname">Firstname</span></dt>
+                <dd>
+                    <span>{{order.firstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.lastname">Lastname</span></dt>
+                <dd>
+                    <span>{{order.lastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.email">Email</span></dt>
+                <dd>
+                    <span>{{order.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{order.telephone}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.fax">Fax</span></dt>
+                <dd>
+                    <span>{{order.fax}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.shippingFirstname">Shipping Firstname</span></dt>
+                <dd>
+                    <span>{{order.shippingFirstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.shippingLastname">Shipping Lastname</span></dt>
+                <dd>
+                    <span>{{order.shippingLastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.shippingCompany">Shipping Company</span></dt>
+                <dd>
+                    <span>{{order.shippingCompany}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.shippingAddress1">Shipping Address 1</span></dt>
+                <dd>
+                    <span>{{order.shippingAddress1}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.shippingAddress2">Shipping Address 2</span></dt>
+                <dd>
+                    <span>{{order.shippingAddress2}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.shippingCity">Shipping City</span></dt>
+                <dd>
+                    <span>{{order.shippingCity}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.shippingPostcode">Shipping Postcode</span></dt>
+                <dd>
+                    <span>{{order.shippingPostcode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.shippingCountry">Shipping Country</span></dt>
+                <dd>
+                    <span>{{order.shippingCountry}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.shippingZone">Shipping Zone</span></dt>
+                <dd>
+                    <span>{{order.shippingZone}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.shippingAddressFormat">Shipping Address Format</span></dt>
+                <dd>
+                    <span>{{order.shippingAddressFormat}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.shippingMethod">Shipping Method</span></dt>
+                <dd>
+                    <span>{{order.shippingMethod}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentFirstname">Payment Firstname</span></dt>
+                <dd>
+                    <span>{{order.paymentFirstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentLastname">Payment Lastname</span></dt>
+                <dd>
+                    <span>{{order.paymentLastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentCompany">Payment Company</span></dt>
+                <dd>
+                    <span>{{order.paymentCompany}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentAddress1">Payment Address 1</span></dt>
+                <dd>
+                    <span>{{order.paymentAddress1}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentAddress2">Payment Address 2</span></dt>
+                <dd>
+                    <span>{{order.paymentAddress2}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentCity">Payment City</span></dt>
+                <dd>
+                    <span>{{order.paymentCity}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentPostcode">Payment Postcode</span></dt>
+                <dd>
+                    <span>{{order.paymentPostcode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentCountry">Payment Country</span></dt>
+                <dd>
+                    <span>{{order.paymentCountry}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentZone">Payment Zone</span></dt>
+                <dd>
+                    <span>{{order.paymentZone}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentAddressFormat">Payment Address Format</span></dt>
+                <dd>
+                    <span>{{order.paymentAddressFormat}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentMethod">Payment Method</span></dt>
+                <dd>
+                    <span>{{order.paymentMethod}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.comment">Comment</span></dt>
+                <dd>
+                    <span>{{order.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.total">Total</span></dt>
+                <dd>
+                    <span>{{order.total}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.reward">Reward</span></dt>
+                <dd>
+                    <span>{{order.reward}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.commision">Commision</span></dt>
+                <dd>
+                    <span>{{order.commision}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{order.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.currencyValue">Currency Value</span></dt>
+                <dd>
+                    <span>{{order.currencyValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.ip">Ip</span></dt>
+                <dd>
+                    <span>{{order.ip}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.paymentFlag">Payment Flag</span></dt>
+                <dd>
+                    <span>{{order.paymentFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.orderName">Order Name</span></dt>
+                <dd>
+                    <span>{{order.orderName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.customerId">Customer Id</span></dt>
+                <dd>
+                    <div *ngIf="order.customerIdId">
+                        <a [routerLink]="['/customer', order.customerIdId, 'view']">{{order.customerIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.currencyId">Currency Id</span></dt>
+                <dd>
+                    <div *ngIf="order.currencyIdId">
+                        <a [routerLink]="['/currency', order.currencyIdId, 'view']">{{order.currencyIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.order.orderStatusId">Order Status Id</span></dt>
+                <dd>
+                    <div *ngIf="order.orderStatusIdId">
+                        <a [routerLink]="['/order-status', order.orderStatusIdId, 'view']">{{order.orderStatusIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order', order.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

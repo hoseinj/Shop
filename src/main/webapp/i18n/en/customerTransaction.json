@@ -1,0 +1,28 @@
+{
+  "shopApp": {
+    "customerTransaction": {
+      "home": {
+        "title": "Customer Transactions",
+        "createLabel": "Create a new Customer Transaction",
+        "createOrEditLabel": "Create or edit a Customer Transaction",
+        "notFound": "No Customer Transactions found"
+      },
+      "created": "A new Customer Transaction is created with identifier {{ param }}",
+      "updated": "A Customer Transaction is updated with identifier {{ param }}",
+      "deleted": "A Customer Transaction is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Customer Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer Transaction"
+      },
+      "description": "Description",
+      "amount": "Amount",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date"
+    }
+  }
+}

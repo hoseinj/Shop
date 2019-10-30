@@ -1,0 +1,27 @@
+{
+  "shopApp": {
+    "stockStatus": {
+      "home": {
+        "title": "Stock Statuses",
+        "createLabel": "Create a new Stock Status",
+        "createOrEditLabel": "Create or edit a Stock Status",
+        "notFound": "No Stock Statuses found"
+      },
+      "created": "A new Stock Status is created with identifier {{ param }}",
+      "updated": "A Stock Status is updated with identifier {{ param }}",
+      "deleted": "A Stock Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Stock Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Stock Status"
+      },
+      "name": "Name",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="bannerImageDescription">
+            <h2><span jhiTranslate="shopApp.bannerImageDescription.detail.title">Banner Image Description</span> {{bannerImageDescription.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.bannerImageDescription.title">Title</span></dt>
+                <dd>
+                    <span>{{bannerImageDescription.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.bannerImageDescription.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{bannerImageDescription.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.bannerImageDescription.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{bannerImageDescription.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.bannerImageDescription.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{bannerImageDescription.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.bannerImageDescription.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{bannerImageDescription.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.bannerImageDescription.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{bannerImageDescription.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/banner-image-description', bannerImageDescription.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

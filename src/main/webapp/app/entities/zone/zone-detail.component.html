@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="zone">
+            <h2><span jhiTranslate="shopApp.zone.detail.title">Zone</span> {{zone.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.zone.code">Code</span></dt>
+                <dd>
+                    <span>{{zone.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.zone.name">Name</span></dt>
+                <dd>
+                    <span>{{zone.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.zone.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{zone.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.zone.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{zone.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.zone.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{zone.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.zone.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{zone.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.zone.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{zone.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.zone.country">Country</span></dt>
+                <dd>
+                    <div *ngIf="zone.countryId">
+                        <a [routerLink]="['/country', zone.countryId, 'view']">{{zone.countryId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/zone', zone.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="banner">
+            <h2><span jhiTranslate="shopApp.banner.detail.title">Banner</span> {{banner.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.banner.title">Title</span></dt>
+                <dd>
+                    <span>{{banner.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.url">Url</span></dt>
+                <dd>
+                    <span>{{banner.url}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.link">Link</span></dt>
+                <dd>
+                    <span>{{banner.link}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.content">Content</span></dt>
+                <dd>
+                    <span>{{banner.content}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.position">Position</span></dt>
+                <dd>
+                    <span>{{banner.position}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.image">Image</span></dt>
+                <dd>
+                    <span>{{banner.image}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.imagePath">Image Path</span></dt>
+                <dd>
+                    <span>{{banner.imagePath}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.containerName">Container Name</span></dt>
+                <dd>
+                    <span>{{banner.containerName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.viewPageCount">View Page Count</span></dt>
+                <dd>
+                    <span>{{banner.viewPageCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{banner.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{banner.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{banner.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{banner.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{banner.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.banner.bannerGroupId">Banner Group Id</span></dt>
+                <dd>
+                    <div *ngIf="banner.bannerGroupIdId">
+                        <a [routerLink]="['/banner-group', banner.bannerGroupIdId, 'view']">{{banner.bannerGroupIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/banner', banner.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orderProduct">
+            <h2><span jhiTranslate="shopApp.orderProduct.detail.title">Order Product</span> {{orderProduct.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.orderProduct.name">Name</span></dt>
+                <dd>
+                    <span>{{orderProduct.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.model">Model</span></dt>
+                <dd>
+                    <span>{{orderProduct.model}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{orderProduct.quantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.trace">Trace</span></dt>
+                <dd>
+                    <span>{{orderProduct.trace}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.total">Total</span></dt>
+                <dd>
+                    <span>{{orderProduct.total}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.tax">Tax</span></dt>
+                <dd>
+                    <span>{{orderProduct.tax}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{orderProduct.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{orderProduct.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{orderProduct.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{orderProduct.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{orderProduct.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.productId">Product Id</span></dt>
+                <dd>
+                    <div *ngIf="orderProduct.productIdId">
+                        <a [routerLink]="['/product', orderProduct.productIdId, 'view']">{{orderProduct.productIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.orderId">Order Id</span></dt>
+                <dd>
+                    <div *ngIf="orderProduct.orderIdId">
+                        <a [routerLink]="['/order', orderProduct.orderIdId, 'view']">{{orderProduct.orderIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="orderProduct.productId">
+                        <a [routerLink]="['/product', orderProduct.productId, 'view']">{{orderProduct.productId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderProduct.order">Order</span></dt>
+                <dd>
+                    <div *ngIf="orderProduct.orderId">
+                        <a [routerLink]="['/order', orderProduct.orderId, 'view']">{{orderProduct.orderId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-product', orderProduct.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

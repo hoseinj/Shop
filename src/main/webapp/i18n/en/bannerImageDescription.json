@@ -1,0 +1,27 @@
+{
+  "shopApp": {
+    "bannerImageDescription": {
+      "home": {
+        "title": "Banner Image Descriptions",
+        "createLabel": "Create a new Banner Image Description",
+        "createOrEditLabel": "Create or edit a Banner Image Description",
+        "notFound": "No Banner Image Descriptions found"
+      },
+      "created": "A new Banner Image Description is created with identifier {{ param }}",
+      "updated": "A Banner Image Description is updated with identifier {{ param }}",
+      "deleted": "A Banner Image Description is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Banner Image Description {{ id }}?"
+      },
+      "detail": {
+        "title": "Banner Image Description"
+      },
+      "title": "Title",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date"
+    }
+  }
+}

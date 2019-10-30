@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orderHistory">
+            <h2><span jhiTranslate="shopApp.orderHistory.detail.title">Order History</span> {{orderHistory.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.orderHistory.notify">Notify</span></dt>
+                <dd>
+                    <span>{{orderHistory.notify}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderHistory.comment">Comment</span></dt>
+                <dd>
+                    <span>{{orderHistory.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderHistory.dateAdded">Date Added</span></dt>
+                <dd>
+                    <span>{{orderHistory.dateAdded}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderHistory.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{orderHistory.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderHistory.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{orderHistory.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderHistory.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{orderHistory.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderHistory.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{orderHistory.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderHistory.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{orderHistory.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-history', orderHistory.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orderTotal">
+            <h2><span jhiTranslate="shopApp.orderTotal.detail.title">Order Total</span> {{orderTotal.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.orderTotal.value">Value</span></dt>
+                <dd>
+                    <span>{{orderTotal.value}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderTotal.orderId">Order Id</span></dt>
+                <dd>
+                    <div *ngIf="orderTotal.orderIdId">
+                        <a [routerLink]="['/order', orderTotal.orderIdId, 'view']">{{orderTotal.orderIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-total', orderTotal.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productRating">
+            <h2><span jhiTranslate="shopApp.productRating.detail.title">Product Rating</span> {{productRating.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.productRating.firstname">Firstname</span></dt>
+                <dd>
+                    <span>{{productRating.firstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.lastname">Lastname</span></dt>
+                <dd>
+                    <span>{{productRating.lastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.email">Email</span></dt>
+                <dd>
+                    <span>{{productRating.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.rating">Rating</span></dt>
+                <dd>
+                    <span>{{productRating.rating}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.review">Review</span></dt>
+                <dd>
+                    <span>{{productRating.review}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.imagePath">Image Path</span></dt>
+                <dd>
+                    <span>{{productRating.imagePath}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.image">Image</span></dt>
+                <dd>
+                    <span>{{productRating.image}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{productRating.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{productRating.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{productRating.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{productRating.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{productRating.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="productRating.productId">
+                        <a [routerLink]="['/product', productRating.productId, 'view']">{{productRating.productId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.productId">Product Id</span></dt>
+                <dd>
+                    <div *ngIf="productRating.productIdId">
+                        <a [routerLink]="['/product', productRating.productIdId, 'view']">{{productRating.productIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.customerId">Customer Id</span></dt>
+                <dd>
+                    <div *ngIf="productRating.customerIdId">
+                        <a [routerLink]="['/customer', productRating.customerIdId, 'view']">{{productRating.customerIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRating.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="productRating.customerId">
+                        <a [routerLink]="['/customer', productRating.customerId, 'view']">{{productRating.customerId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-rating', productRating.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "shopApp": {
+    "porductDescription": {
+      "home": {
+        "title": "Porduct Descriptions",
+        "createLabel": "Create a new Porduct Description",
+        "createOrEditLabel": "Create or edit a Porduct Description",
+        "notFound": "No Porduct Descriptions found"
+      },
+      "created": "A new Porduct Description is created with identifier {{ param }}",
+      "updated": "A Porduct Description is updated with identifier {{ param }}",
+      "deleted": "A Porduct Description is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Porduct Description {{ id }}?"
+      },
+      "detail": {
+        "title": "Porduct Description"
+      },
+      "name": "Name",
+      "description": "Description",
+      "metaDescription": "Meta Description",
+      "metaKeyword": "Meta Keyword",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "shopApp": {
+    "setting": {
+      "home": {
+        "title": "Settings",
+        "createLabel": "Create a new Setting",
+        "createOrEditLabel": "Create or edit a Setting",
+        "notFound": "No Settings found"
+      },
+      "created": "A new Setting is created with identifier {{ param }}",
+      "updated": "A Setting is updated with identifier {{ param }}",
+      "deleted": "A Setting is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Setting {{ id }}?"
+      },
+      "detail": {
+        "title": "Setting"
+      },
+      "url": "Url",
+      "metaTagTitle": "Meta Tag Title",
+      "metaTagDescription": "Meta Tag Description",
+      "metaTagKeywords": "Meta Tag Keywords",
+      "storeName": "Store Name",
+      "storeOwner": "Store Owner",
+      "storeAddress": "Store Address",
+      "storeEmail": "Store Email",
+      "storeTelephone": "Store Telephone",
+      "storeFax": "Store Fax",
+      "storeLogo": "Store Logo",
+      "storeLogoPath": "Store Logo Path",
+      "maintenanceMode": "Maintenance Mode",
+      "storeLanguageName": "Store Language Name",
+      "storeImage": "Store Image",
+      "storeImagePath": "Store Image Path",
+      "google": "Google",
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "orderStatus": "Order Status",
+      "invoicePrefix": "Invoice Prefix",
+      "itemsPerPage": "Items Per Page",
+      "categoryProductCount": "Category Product Count",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date",
+      "countryId": "Country Id",
+      "zoneId": "Zone Id"
+    }
+  }
+}

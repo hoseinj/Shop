@@ -1,0 +1,249 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-migrations-heading" jhiTranslate="shopApp.migrations.home.createOrEditLabel">Create or edit a Migrations</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.timestamp" for="field_timestamp">Timestamp</label>
+                    <input type="number" class="form-control" name="timestamp" id="field_timestamp"
+                           formControlName="timestamp"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.invoiceNo" for="field_invoiceNo">Invoice No</label>
+                    <input type="text" class="form-control" name="invoiceNo" id="field_invoiceNo"
+                           formControlName="invoiceNo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.invoicePrefix" for="field_invoicePrefix">Invoice Prefix</label>
+                    <input type="text" class="form-control" name="invoicePrefix" id="field_invoicePrefix"
+                           formControlName="invoicePrefix"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.firstname" for="field_firstname">Firstname</label>
+                    <input type="text" class="form-control" name="firstname" id="field_firstname"
+                           formControlName="firstname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.lastname" for="field_lastname">Lastname</label>
+                    <input type="text" class="form-control" name="lastname" id="field_lastname"
+                           formControlName="lastname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.telephone" for="field_telephone">Telephone</label>
+                    <input type="text" class="form-control" name="telephone" id="field_telephone"
+                           formControlName="telephone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.fax" for="field_fax">Fax</label>
+                    <input type="text" class="form-control" name="fax" id="field_fax"
+                           formControlName="fax"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.shippingFirstname" for="field_shippingFirstname">Shipping Firstname</label>
+                    <input type="text" class="form-control" name="shippingFirstname" id="field_shippingFirstname"
+                           formControlName="shippingFirstname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.shippingLastname" for="field_shippingLastname">Shipping Lastname</label>
+                    <input type="text" class="form-control" name="shippingLastname" id="field_shippingLastname"
+                           formControlName="shippingLastname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.shippingCompany" for="field_shippingCompany">Shipping Company</label>
+                    <input type="text" class="form-control" name="shippingCompany" id="field_shippingCompany"
+                           formControlName="shippingCompany"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.shippingAddress1" for="field_shippingAddress1">Shipping Address 1</label>
+                    <input type="text" class="form-control" name="shippingAddress1" id="field_shippingAddress1"
+                           formControlName="shippingAddress1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.shippingAddress2" for="field_shippingAddress2">Shipping Address 2</label>
+                    <input type="text" class="form-control" name="shippingAddress2" id="field_shippingAddress2"
+                           formControlName="shippingAddress2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.shippingCity" for="field_shippingCity">Shipping City</label>
+                    <input type="text" class="form-control" name="shippingCity" id="field_shippingCity"
+                           formControlName="shippingCity"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.shippingPostcode" for="field_shippingPostcode">Shipping Postcode</label>
+                    <input type="text" class="form-control" name="shippingPostcode" id="field_shippingPostcode"
+                           formControlName="shippingPostcode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.shippingCountry" for="field_shippingCountry">Shipping Country</label>
+                    <input type="text" class="form-control" name="shippingCountry" id="field_shippingCountry"
+                           formControlName="shippingCountry"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.shippingZone" for="field_shippingZone">Shipping Zone</label>
+                    <input type="text" class="form-control" name="shippingZone" id="field_shippingZone"
+                           formControlName="shippingZone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.shippingAddressFormat" for="field_shippingAddressFormat">Shipping Address Format</label>
+                    <input type="text" class="form-control" name="shippingAddressFormat" id="field_shippingAddressFormat"
+                           formControlName="shippingAddressFormat"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.shippingMethod" for="field_shippingMethod">Shipping Method</label>
+                    <input type="text" class="form-control" name="shippingMethod" id="field_shippingMethod"
+                           formControlName="shippingMethod"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentFirstname" for="field_paymentFirstname">Payment Firstname</label>
+                    <input type="text" class="form-control" name="paymentFirstname" id="field_paymentFirstname"
+                           formControlName="paymentFirstname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentLastname" for="field_paymentLastname">Payment Lastname</label>
+                    <input type="text" class="form-control" name="paymentLastname" id="field_paymentLastname"
+                           formControlName="paymentLastname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentCompany" for="field_paymentCompany">Payment Company</label>
+                    <input type="text" class="form-control" name="paymentCompany" id="field_paymentCompany"
+                           formControlName="paymentCompany"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentAddress1" for="field_paymentAddress1">Payment Address 1</label>
+                    <input type="text" class="form-control" name="paymentAddress1" id="field_paymentAddress1"
+                           formControlName="paymentAddress1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentAddress2" for="field_paymentAddress2">Payment Address 2</label>
+                    <input type="text" class="form-control" name="paymentAddress2" id="field_paymentAddress2"
+                           formControlName="paymentAddress2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentCity" for="field_paymentCity">Payment City</label>
+                    <input type="text" class="form-control" name="paymentCity" id="field_paymentCity"
+                           formControlName="paymentCity"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentPostcode" for="field_paymentPostcode">Payment Postcode</label>
+                    <input type="text" class="form-control" name="paymentPostcode" id="field_paymentPostcode"
+                           formControlName="paymentPostcode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentCountry" for="field_paymentCountry">Payment Country</label>
+                    <input type="text" class="form-control" name="paymentCountry" id="field_paymentCountry"
+                           formControlName="paymentCountry"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentZone" for="field_paymentZone">Payment Zone</label>
+                    <input type="text" class="form-control" name="paymentZone" id="field_paymentZone"
+                           formControlName="paymentZone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentAddressFormat" for="field_paymentAddressFormat">Payment Address Format</label>
+                    <input type="text" class="form-control" name="paymentAddressFormat" id="field_paymentAddressFormat"
+                           formControlName="paymentAddressFormat"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentMethod" for="field_paymentMethod">Payment Method</label>
+                    <input type="text" class="form-control" name="paymentMethod" id="field_paymentMethod"
+                           formControlName="paymentMethod"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.comment" for="field_comment">Comment</label>
+                    <input type="text" class="form-control" name="comment" id="field_comment"
+                           formControlName="comment"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.total" for="field_total">Total</label>
+                    <input type="number" class="form-control" name="total" id="field_total"
+                           formControlName="total"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.reward" for="field_reward">Reward</label>
+                    <input type="number" class="form-control" name="reward" id="field_reward"
+                           formControlName="reward"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.commision" for="field_commision">Commision</label>
+                    <input type="number" class="form-control" name="commision" id="field_commision"
+                           formControlName="commision"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.currencyCode" for="field_currencyCode">Currency Code</label>
+                    <input type="text" class="form-control" name="currencyCode" id="field_currencyCode"
+                           formControlName="currencyCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.currencyValue" for="field_currencyValue">Currency Value</label>
+                    <input type="number" class="form-control" name="currencyValue" id="field_currencyValue"
+                           formControlName="currencyValue"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.ip" for="field_ip">Ip</label>
+                    <input type="text" class="form-control" name="ip" id="field_ip"
+                           formControlName="ip"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.paymentFlag" for="field_paymentFlag">Payment Flag</label>
+                    <input type="number" class="form-control" name="paymentFlag" id="field_paymentFlag"
+                           formControlName="paymentFlag"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.orderName" for="field_orderName">Order Name</label>
+                    <input type="text" class="form-control" name="orderName" id="field_orderName"
+                           formControlName="orderName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.isActive" for="field_isActive">Is Active</label>
+                    <input type="number" class="form-control" name="isActive" id="field_isActive"
+                           formControlName="isActive"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.createdBy" for="field_createdBy">Created By</label>
+                    <input type="number" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <input type="number" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                           formControlName="modifiedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.createdDate" for="field_createdDate">Created Date</label>
+                    <input type="text" class="form-control" name="createdDate" id="field_createdDate"
+                           formControlName="createdDate"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.migrations.modifiedDate" for="field_modifiedDate">Modified Date</label>
+                    <input type="text" class="form-control" name="modifiedDate" id="field_modifiedDate"
+                           formControlName="modifiedDate"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
