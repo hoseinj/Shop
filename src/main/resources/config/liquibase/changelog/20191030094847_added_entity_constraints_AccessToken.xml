@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity AccessToken.
+    -->
+    <changeSet id="20191030094847-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="shop_user_id"
+                                 baseTableName="access_token"
+                                 constraintName="fk_access_token_shop_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="shop_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="shop_user_id_id"
+                                 baseTableName="access_token"
+                                 constraintName="fk_access_token_shop_user_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="shop_user"/>
+
+    </changeSet>
+</databaseChangeLog>

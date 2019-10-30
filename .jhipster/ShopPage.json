@@ -1,0 +1,68 @@
+{
+    "name": "ShopPage",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "intro",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fullText",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sortOrder",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "metaTagTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metaTagDescroption",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metaTagKeywords",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "viewPageCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "modifiedBy",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modifiedDate",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191030094832",
+    "entityTableName": "shop_page",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

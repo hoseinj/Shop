@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productRelated">
+            <h2><span jhiTranslate="shopApp.productRelated.detail.title">Product Related</span> {{productRelated.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.productRelated.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{productRelated.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRelated.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{productRelated.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRelated.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{productRelated.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRelated.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{productRelated.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRelated.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{productRelated.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRelated.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="productRelated.productId">
+                        <a [routerLink]="['/product', productRelated.productId, 'view']">{{productRelated.productId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productRelated.productId">Product Id</span></dt>
+                <dd>
+                    <div *ngIf="productRelated.productIdId">
+                        <a [routerLink]="['/product', productRelated.productIdId, 'view']">{{productRelated.productIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-related', productRelated.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

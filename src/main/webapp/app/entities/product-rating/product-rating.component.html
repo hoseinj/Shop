@@ -1,0 +1,112 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="shopApp.productRating.home.title">Product Ratings</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-product-rating" [routerLink]="['/product-rating/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="shopApp.productRating.home.createLabel">
+            Create a new Product Rating
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="productRatings?.length === 0">
+        <span jhiTranslate="shopApp.productRating.home.notFound">No productRatings found</span>
+    </div>
+    <div class="table-responsive" *ngIf="productRatings?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="firstname"><span jhiTranslate="shopApp.productRating.firstname">Firstname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastname"><span jhiTranslate="shopApp.productRating.lastname">Lastname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="email"><span jhiTranslate="shopApp.productRating.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="rating"><span jhiTranslate="shopApp.productRating.rating">Rating</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="review"><span jhiTranslate="shopApp.productRating.review">Review</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="imagePath"><span jhiTranslate="shopApp.productRating.imagePath">Image Path</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="image"><span jhiTranslate="shopApp.productRating.image">Image</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isActive"><span jhiTranslate="shopApp.productRating.isActive">Is Active</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdBy"><span jhiTranslate="shopApp.productRating.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedBy"><span jhiTranslate="shopApp.productRating.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdDate"><span jhiTranslate="shopApp.productRating.createdDate">Created Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedDate"><span jhiTranslate="shopApp.productRating.modifiedDate">Modified Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productId"><span jhiTranslate="shopApp.productRating.product">Product</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productIdId"><span jhiTranslate="shopApp.productRating.productId">Product Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="customerIdId"><span jhiTranslate="shopApp.productRating.customerId">Customer Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="customerId"><span jhiTranslate="shopApp.productRating.customer">Customer</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let productRating of productRatings ;trackBy: trackId">
+                <td><a [routerLink]="['/product-rating', productRating.id, 'view' ]">{{productRating.id}}</a></td>
+                <td>{{productRating.firstname}}</td>
+                <td>{{productRating.lastname}}</td>
+                <td>{{productRating.email}}</td>
+                <td>{{productRating.rating}}</td>
+                <td>{{productRating.review}}</td>
+                <td>{{productRating.imagePath}}</td>
+                <td>{{productRating.image}}</td>
+                <td>{{productRating.isActive}}</td>
+                <td>{{productRating.createdBy}}</td>
+                <td>{{productRating.modifiedBy}}</td>
+                <td>{{productRating.createdDate}}</td>
+                <td>{{productRating.modifiedDate}}</td>
+                <td>
+                    <div *ngIf="productRating.productId">
+                        <a [routerLink]="['/product', productRating.productId , 'view' ]" >{{productRating.productId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="productRating.productIdId">
+                        <a [routerLink]="['/product', productRating.productIdId , 'view' ]" >{{productRating.productIdId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="productRating.customerIdId">
+                        <a [routerLink]="['/customer', productRating.customerIdId , 'view' ]" >{{productRating.customerIdId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="productRating.customerId">
+                        <a [routerLink]="['/customer', productRating.customerId , 'view' ]" >{{productRating.customerId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/product-rating', productRating.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/product-rating', productRating.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/product-rating', { outlets: { popup: productRating.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="productRatings?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

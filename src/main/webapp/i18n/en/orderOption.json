@@ -1,0 +1,29 @@
+{
+  "shopApp": {
+    "orderOption": {
+      "home": {
+        "title": "Order Options",
+        "createLabel": "Create a new Order Option",
+        "createOrEditLabel": "Create or edit a Order Option",
+        "notFound": "No Order Options found"
+      },
+      "created": "A new Order Option is created with identifier {{ param }}",
+      "updated": "A Order Option is updated with identifier {{ param }}",
+      "deleted": "A Order Option is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Order Option {{ id }}?"
+      },
+      "detail": {
+        "title": "Order Option"
+      },
+      "name": "Name",
+      "value": "Value",
+      "type": "Type",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date"
+    }
+  }
+}

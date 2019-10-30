@@ -1,0 +1,47 @@
+{
+  "shopApp": {
+    "customer": {
+      "home": {
+        "title": "Customers",
+        "createLabel": "Create a new Customer",
+        "createOrEditLabel": "Create or edit a Customer",
+        "notFound": "No Customers found"
+      },
+      "created": "A new Customer is created with identifier {{ param }}",
+      "updated": "A Customer is updated with identifier {{ param }}",
+      "deleted": "A Customer is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Customer {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "mobile": "Mobile",
+      "address": "Address",
+      "city": "City",
+      "pincode": "Pincode",
+      "avatar": "Avatar",
+      "avatarPath": "Avatar Path",
+      "mailStatus": "Mail Status",
+      "deleteFlag": "Delete Flag",
+      "lastlogin": "Lastlogin",
+      "newsletter": "Newsletter",
+      "safe": "Safe",
+      "ip": "Ip",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date",
+      "productRating": "Product Rating",
+      "countryId": "Country Id",
+      "zoneId": "Zone Id",
+      "customerGroupId": "Customer Group Id"
+    }
+  }
+}

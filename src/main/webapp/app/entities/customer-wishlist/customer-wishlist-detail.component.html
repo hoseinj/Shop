@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customerWishlist">
+            <h2><span jhiTranslate="shopApp.customerWishlist.detail.title">Customer Wishlist</span> {{customerWishlist.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.customerWishlist.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{customerWishlist.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerWishlist.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{customerWishlist.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerWishlist.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{customerWishlist.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerWishlist.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{customerWishlist.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerWishlist.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{customerWishlist.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerWishlist.customerId">Customer Id</span></dt>
+                <dd>
+                    <div *ngIf="customerWishlist.customerIdId">
+                        <a [routerLink]="['/customer', customerWishlist.customerIdId, 'view']">{{customerWishlist.customerIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerWishlist.productId">Product Id</span></dt>
+                <dd>
+                    <div *ngIf="customerWishlist.productIdId">
+                        <a [routerLink]="['/product', customerWishlist.productIdId, 'view']">{{customerWishlist.productIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerWishlist.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="customerWishlist.productId">
+                        <a [routerLink]="['/product', customerWishlist.productId, 'view']">{{customerWishlist.productId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customer-wishlist', customerWishlist.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

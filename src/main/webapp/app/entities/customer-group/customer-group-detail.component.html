@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customerGroup">
+            <h2><span jhiTranslate="shopApp.customerGroup.detail.title">Customer Group</span> {{customerGroup.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.customerGroup.name">Name</span></dt>
+                <dd>
+                    <span>{{customerGroup.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerGroup.description">Description</span></dt>
+                <dd>
+                    <span>{{customerGroup.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerGroup.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{customerGroup.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerGroup.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{customerGroup.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerGroup.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{customerGroup.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerGroup.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{customerGroup.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customerGroup.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{customerGroup.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customer-group', customerGroup.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

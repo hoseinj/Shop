@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productViewLog">
+            <h2><span jhiTranslate="shopApp.productViewLog.detail.title">Product View Log</span> {{productViewLog.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.productViewLog.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{productViewLog.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productViewLog.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{productViewLog.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productViewLog.email">Email</span></dt>
+                <dd>
+                    <span>{{productViewLog.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productViewLog.userName">User Name</span></dt>
+                <dd>
+                    <span>{{productViewLog.userName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productViewLog.mobile">Mobile</span></dt>
+                <dd>
+                    <span>{{productViewLog.mobile}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productViewLog.address">Address</span></dt>
+                <dd>
+                    <span>{{productViewLog.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productViewLog.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{productViewLog.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productViewLog.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{productViewLog.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productViewLog.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{productViewLog.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productViewLog.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{productViewLog.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productViewLog.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{productViewLog.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productViewLog.productId">Product Id</span></dt>
+                <dd>
+                    <div *ngIf="productViewLog.productIdId">
+                        <a [routerLink]="['/product', productViewLog.productIdId, 'view']">{{productViewLog.productIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-view-log', productViewLog.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
