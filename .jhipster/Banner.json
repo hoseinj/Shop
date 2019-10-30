@@ -67,7 +67,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20191030094806",
+    "changelogDate": "20191030103935",
     "entityTableName": "banner",
     "dto": "mapstruct",
     "pagination": "pagination",

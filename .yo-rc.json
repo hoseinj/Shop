@@ -24,9 +24,7 @@
     "testFrameworks": [],
     "enableTranslation": true,
     "nativeLanguage": "en",
-    "languages": [
-      "en"
-    ],
+    "languages": ["en"],
     "clientFramework": "angularX",
     "jhiPrefix": "jhi",
     "jhipsterVersion": "6.4.1",
@@ -36,7 +34,9 @@
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
-    "blueprints": []
+    "blueprints": [],
+    "herokuAppName": "secure-brook-54874",
+    "herokuDeployType": "git"
   },
   "git-provider": "GitHub",
   "git-company": "hoseinj",
