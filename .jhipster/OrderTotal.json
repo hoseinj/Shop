@@ -1,0 +1,28 @@
+{
+    "name": "OrderTotal",
+    "fields": [
+        {
+            "fieldName": "value",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "order",
+            "otherEntityRelationshipName": "orderTotal",
+            "relationshipName": "orderId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191030094831",
+    "entityTableName": "order_total",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

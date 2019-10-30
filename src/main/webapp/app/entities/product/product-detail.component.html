@@ -1,0 +1,151 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="product">
+            <h2><span jhiTranslate="shopApp.product.detail.title">Product</span> {{product.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.product.sku">Sku</span></dt>
+                <dd>
+                    <span>{{product.sku}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.upc">Upc</span></dt>
+                <dd>
+                    <span>{{product.upc}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{product.quantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.image">Image</span></dt>
+                <dd>
+                    <span>{{product.image}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.imagePath">Image Path</span></dt>
+                <dd>
+                    <span>{{product.imagePath}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.shipping">Shipping</span></dt>
+                <dd>
+                    <span>{{product.shipping}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.price">Price</span></dt>
+                <dd>
+                    <span>{{product.price}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.dateAvailable">Date Available</span></dt>
+                <dd>
+                    <span>{{product.dateAvailable}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.sortOrder">Sort Order</span></dt>
+                <dd>
+                    <span>{{product.sortOrder}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.name">Name</span></dt>
+                <dd>
+                    <span>{{product.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.description">Description</span></dt>
+                <dd>
+                    <span>{{product.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.amount">Amount</span></dt>
+                <dd>
+                    <span>{{product.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.metaTagTitle">Meta Tag Title</span></dt>
+                <dd>
+                    <span>{{product.metaTagTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.metaTagDescription">Meta Tag Description</span></dt>
+                <dd>
+                    <span>{{product.metaTagDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.metaTagKeyword">Meta Tag Keyword</span></dt>
+                <dd>
+                    <span>{{product.metaTagKeyword}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.discount">Discount</span></dt>
+                <dd>
+                    <span>{{product.discount}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.subtractStock">Subtract Stock</span></dt>
+                <dd>
+                    <span>{{product.subtractStock}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.minimumQuantity">Minimum Quantity</span></dt>
+                <dd>
+                    <span>{{product.minimumQuantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.location">Location</span></dt>
+                <dd>
+                    <span>{{product.location}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.wishlistStatus">Wishlist Status</span></dt>
+                <dd>
+                    <span>{{product.wishlistStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.deletFlag">Delet Flag</span></dt>
+                <dd>
+                    <span>{{product.deletFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.isFeatured">Is Featured</span></dt>
+                <dd>
+                    <span>{{product.isFeatured}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.rating">Rating</span></dt>
+                <dd>
+                    <span>{{product.rating}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.condition">Condition</span></dt>
+                <dd>
+                    <span>{{product.condition}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{product.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{product.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{product.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{product.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{product.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.stockStatusid">Stock Statusid</span></dt>
+                <dd>
+                    <div *ngIf="product.stockStatusidId">
+                        <a [routerLink]="['/stock-status', product.stockStatusidId, 'view']">{{product.stockStatusidId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.product.manufacturerId">Manufacturer Id</span></dt>
+                <dd>
+                    <div *ngIf="product.manufacturerIdId">
+                        <a [routerLink]="['/manufacturer', product.manufacturerIdId, 'view']">{{product.manufacturerIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product', product.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

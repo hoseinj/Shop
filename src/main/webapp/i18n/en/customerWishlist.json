@@ -1,0 +1,29 @@
+{
+  "shopApp": {
+    "customerWishlist": {
+      "home": {
+        "title": "Customer Wishlists",
+        "createLabel": "Create a new Customer Wishlist",
+        "createOrEditLabel": "Create or edit a Customer Wishlist",
+        "notFound": "No Customer Wishlists found"
+      },
+      "created": "A new Customer Wishlist is created with identifier {{ param }}",
+      "updated": "A Customer Wishlist is updated with identifier {{ param }}",
+      "deleted": "A Customer Wishlist is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Customer Wishlist {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer Wishlist"
+      },
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date",
+      "customerId": "Customer Id",
+      "productId": "Product Id",
+      "product": "Product"
+    }
+  }
+}

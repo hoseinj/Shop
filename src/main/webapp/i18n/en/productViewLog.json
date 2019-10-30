@@ -1,0 +1,33 @@
+{
+  "shopApp": {
+    "productViewLog": {
+      "home": {
+        "title": "Product View Logs",
+        "createLabel": "Create a new Product View Log",
+        "createOrEditLabel": "Create or edit a Product View Log",
+        "notFound": "No Product View Logs found"
+      },
+      "created": "A new Product View Log is created with identifier {{ param }}",
+      "updated": "A Product View Log is updated with identifier {{ param }}",
+      "deleted": "A Product View Log is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product View Log {{ id }}?"
+      },
+      "detail": {
+        "title": "Product View Log"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "userName": "User Name",
+      "mobile": "Mobile",
+      "address": "Address",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date",
+      "productId": "Product Id"
+    }
+  }
+}

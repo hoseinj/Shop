@@ -1,0 +1,86 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="shopApp.productRelated.home.title">Product Relateds</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-product-related" [routerLink]="['/product-related/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="shopApp.productRelated.home.createLabel">
+            Create a new Product Related
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="productRelateds?.length === 0">
+        <span jhiTranslate="shopApp.productRelated.home.notFound">No productRelateds found</span>
+    </div>
+    <div class="table-responsive" *ngIf="productRelateds?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isActive"><span jhiTranslate="shopApp.productRelated.isActive">Is Active</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdBy"><span jhiTranslate="shopApp.productRelated.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedBy"><span jhiTranslate="shopApp.productRelated.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdDate"><span jhiTranslate="shopApp.productRelated.createdDate">Created Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedDate"><span jhiTranslate="shopApp.productRelated.modifiedDate">Modified Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productId"><span jhiTranslate="shopApp.productRelated.product">Product</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="productIdId"><span jhiTranslate="shopApp.productRelated.productId">Product Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let productRelated of productRelateds ;trackBy: trackId">
+                <td><a [routerLink]="['/product-related', productRelated.id, 'view' ]">{{productRelated.id}}</a></td>
+                <td>{{productRelated.isActive}}</td>
+                <td>{{productRelated.createdBy}}</td>
+                <td>{{productRelated.modifiedBy}}</td>
+                <td>{{productRelated.createdDate}}</td>
+                <td>{{productRelated.modifiedDate}}</td>
+                <td>
+                    <div *ngIf="productRelated.productId">
+                        <a [routerLink]="['/product', productRelated.productId , 'view' ]" >{{productRelated.productId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="productRelated.productIdId">
+                        <a [routerLink]="['/product', productRelated.productIdId , 'view' ]" >{{productRelated.productIdId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/product-related', productRelated.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/product-related', productRelated.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/product-related', { outlets: { popup: productRelated.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="productRelateds?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

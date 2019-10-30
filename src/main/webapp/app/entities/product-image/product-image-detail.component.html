@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productImage">
+            <h2><span jhiTranslate="shopApp.productImage.detail.title">Product Image</span> {{productImage.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.productImage.image">Image</span></dt>
+                <dd>
+                    <span>{{productImage.image}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productImage.containerName">Container Name</span></dt>
+                <dd>
+                    <span>{{productImage.containerName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productImage.defualtImage">Defualt Image</span></dt>
+                <dd>
+                    <span>{{productImage.defualtImage}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productImage.sortOrder">Sort Order</span></dt>
+                <dd>
+                    <span>{{productImage.sortOrder}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productImage.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{productImage.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productImage.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{productImage.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productImage.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{productImage.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productImage.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{productImage.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productImage.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{productImage.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productImage.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="productImage.productId">
+                        <a [routerLink]="['/product', productImage.productId, 'view']">{{productImage.productId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productImage.productId">Product Id</span></dt>
+                <dd>
+                    <div *ngIf="productImage.productIdId">
+                        <a [routerLink]="['/product', productImage.productIdId, 'view']">{{productImage.productIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-image', productImage.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+{
+  "shopApp": {
+    "orderStatus": {
+      "home": {
+        "title": "Order Statuses",
+        "createLabel": "Create a new Order Status",
+        "createOrEditLabel": "Create or edit a Order Status",
+        "notFound": "No Order Statuses found"
+      },
+      "created": "A new Order Status is created with identifier {{ param }}",
+      "updated": "A Order Status is updated with identifier {{ param }}",
+      "deleted": "A Order Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Order Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Order Status"
+      },
+      "name": "Name",
+      "colorCode": "Color Code",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date"
+    }
+  }
+}

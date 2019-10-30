@@ -1,0 +1,183 @@
+{
+    "name": "Product",
+    "fields": [
+        {
+            "fieldName": "sku",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "upc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imagePath",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shipping",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "dateAvailable",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sortOrder",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "metaTagTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metaTagDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metaTagKeyword",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "discount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "subtractStock",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "minimumQuantity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "wishlistStatus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "deletFlag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isFeatured",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rating",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "condition",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "modifiedBy",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modifiedDate",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "category",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "categories"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "productImage",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "productImages"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "customerWishlist",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "wishLists"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "productRelated",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "productRelatedS"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "productRating",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "productRatings"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "orderProduct",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "orderProducts"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "stockStatus",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "stockStatusid",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "manufacturer",
+            "otherEntityRelationshipName": "product",
+            "relationshipName": "manufacturerId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191030094834",
+    "entityTableName": "product",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

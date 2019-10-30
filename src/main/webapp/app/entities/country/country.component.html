@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="shopApp.country.home.title">Countries</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-country" [routerLink]="['/country/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="shopApp.country.home.createLabel">
+            Create a new Country
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="countries?.length === 0">
+        <span jhiTranslate="shopApp.country.home.notFound">No countries found</span>
+    </div>
+    <div class="table-responsive" *ngIf="countries?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="shopApp.country.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isoCode2"><span jhiTranslate="shopApp.country.isoCode2">Iso Code 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isoCode3"><span jhiTranslate="shopApp.country.isoCode3">Iso Code 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="addressFormat"><span jhiTranslate="shopApp.country.addressFormat">Address Format</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="postCodeRequired"><span jhiTranslate="shopApp.country.postCodeRequired">Post Code Required</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isActive"><span jhiTranslate="shopApp.country.isActive">Is Active</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdBy"><span jhiTranslate="shopApp.country.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedBy"><span jhiTranslate="shopApp.country.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdDate"><span jhiTranslate="shopApp.country.createdDate">Created Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedDate"><span jhiTranslate="shopApp.country.modifiedDate">Modified Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let country of countries ;trackBy: trackId">
+                <td><a [routerLink]="['/country', country.id, 'view' ]">{{country.id}}</a></td>
+                <td>{{country.name}}</td>
+                <td>{{country.isoCode2}}</td>
+                <td>{{country.isoCode3}}</td>
+                <td>{{country.addressFormat}}</td>
+                <td>{{country.postCodeRequired}}</td>
+                <td>{{country.isActive}}</td>
+                <td>{{country.createdBy}}</td>
+                <td>{{country.modifiedBy}}</td>
+                <td>{{country.createdDate}}</td>
+                <td>{{country.modifiedDate}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/country', country.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/country', country.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/country', { outlets: { popup: country.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="countries?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

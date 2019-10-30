@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="accessToken">
+            <h2><span jhiTranslate="shopApp.accessToken.detail.title">Access Token</span> {{accessToken.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.accessToken.token">Token</span></dt>
+                <dd>
+                    <span>{{accessToken.token}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.accessToken.shopUser">Shop User</span></dt>
+                <dd>
+                    <div *ngIf="accessToken.shopUserId">
+                        <a [routerLink]="['/shop-user', accessToken.shopUserId, 'view']">{{accessToken.shopUserId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.accessToken.shopUserId">Shop User Id</span></dt>
+                <dd>
+                    <div *ngIf="accessToken.shopUserIdId">
+                        <a [routerLink]="['/shop-user', accessToken.shopUserIdId, 'view']">{{accessToken.shopUserIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/access-token', accessToken.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

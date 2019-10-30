@@ -1,0 +1,151 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="setting">
+            <h2><span jhiTranslate="shopApp.setting.detail.title">Setting</span> {{setting.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.setting.url">Url</span></dt>
+                <dd>
+                    <span>{{setting.url}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.metaTagTitle">Meta Tag Title</span></dt>
+                <dd>
+                    <span>{{setting.metaTagTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.metaTagDescription">Meta Tag Description</span></dt>
+                <dd>
+                    <span>{{setting.metaTagDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.metaTagKeywords">Meta Tag Keywords</span></dt>
+                <dd>
+                    <span>{{setting.metaTagKeywords}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.storeName">Store Name</span></dt>
+                <dd>
+                    <span>{{setting.storeName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.storeOwner">Store Owner</span></dt>
+                <dd>
+                    <span>{{setting.storeOwner}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.storeAddress">Store Address</span></dt>
+                <dd>
+                    <span>{{setting.storeAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.storeEmail">Store Email</span></dt>
+                <dd>
+                    <span>{{setting.storeEmail}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.storeTelephone">Store Telephone</span></dt>
+                <dd>
+                    <span>{{setting.storeTelephone}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.storeFax">Store Fax</span></dt>
+                <dd>
+                    <span>{{setting.storeFax}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.storeLogo">Store Logo</span></dt>
+                <dd>
+                    <span>{{setting.storeLogo}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.storeLogoPath">Store Logo Path</span></dt>
+                <dd>
+                    <span>{{setting.storeLogoPath}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.maintenanceMode">Maintenance Mode</span></dt>
+                <dd>
+                    <span>{{setting.maintenanceMode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.storeLanguageName">Store Language Name</span></dt>
+                <dd>
+                    <span>{{setting.storeLanguageName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.storeImage">Store Image</span></dt>
+                <dd>
+                    <span>{{setting.storeImage}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.storeImagePath">Store Image Path</span></dt>
+                <dd>
+                    <span>{{setting.storeImagePath}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.google">Google</span></dt>
+                <dd>
+                    <span>{{setting.google}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.facebook">Facebook</span></dt>
+                <dd>
+                    <span>{{setting.facebook}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.twitter">Twitter</span></dt>
+                <dd>
+                    <span>{{setting.twitter}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.instagram">Instagram</span></dt>
+                <dd>
+                    <span>{{setting.instagram}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.orderStatus">Order Status</span></dt>
+                <dd>
+                    <span>{{setting.orderStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.invoicePrefix">Invoice Prefix</span></dt>
+                <dd>
+                    <span>{{setting.invoicePrefix}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.itemsPerPage">Items Per Page</span></dt>
+                <dd>
+                    <span>{{setting.itemsPerPage}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.categoryProductCount">Category Product Count</span></dt>
+                <dd>
+                    <span>{{setting.categoryProductCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{setting.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{setting.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{setting.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{setting.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{setting.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.countryId">Country Id</span></dt>
+                <dd>
+                    <div *ngIf="setting.countryIdId">
+                        <a [routerLink]="['/country', setting.countryIdId, 'view']">{{setting.countryIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.setting.zoneId">Zone Id</span></dt>
+                <dd>
+                    <div *ngIf="setting.zoneIdId">
+                        <a [routerLink]="['/zone', setting.zoneIdId, 'view']">{{setting.zoneIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/setting', setting.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

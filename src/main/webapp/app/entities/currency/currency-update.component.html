@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-currency-heading" jhiTranslate="shopApp.currency.home.createOrEditLabel">Create or edit a Currency</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.currency.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                           formControlName="title"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.currency.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.currency.symbolLeft" for="field_symbolLeft">Symbol Left</label>
+                    <input type="text" class="form-control" name="symbolLeft" id="field_symbolLeft"
+                           formControlName="symbolLeft"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.currency.symbolRight" for="field_symbolRight">Symbol Right</label>
+                    <input type="text" class="form-control" name="symbolRight" id="field_symbolRight"
+                           formControlName="symbolRight"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.currency.decimalPlace" for="field_decimalPlace">Decimal Place</label>
+                    <input type="number" class="form-control" name="decimalPlace" id="field_decimalPlace"
+                           formControlName="decimalPlace"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.currency.value" for="field_value">Value</label>
+                    <input type="number" class="form-control" name="value" id="field_value"
+                           formControlName="value"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.currency.isActive" for="field_isActive">Is Active</label>
+                    <input type="number" class="form-control" name="isActive" id="field_isActive"
+                           formControlName="isActive"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.currency.createdBy" for="field_createdBy">Created By</label>
+                    <input type="number" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.currency.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <input type="number" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                           formControlName="modifiedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.currency.createdDate" for="field_createdDate">Created Date</label>
+                    <input type="text" class="form-control" name="createdDate" id="field_createdDate"
+                           formControlName="createdDate"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.currency.modifiedDate" for="field_modifiedDate">Modified Date</label>
+                    <input type="text" class="form-control" name="modifiedDate" id="field_modifiedDate"
+                           formControlName="modifiedDate"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

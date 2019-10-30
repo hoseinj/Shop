@@ -1,0 +1,158 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="shopApp.order.home.title">Orders</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-order" [routerLink]="['/order/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="shopApp.order.home.createLabel">
+            Create a new Order
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="orders?.length === 0">
+        <span jhiTranslate="shopApp.order.home.notFound">No orders found</span>
+    </div>
+    <div class="table-responsive" *ngIf="orders?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="invoiceNo"><span jhiTranslate="shopApp.order.invoiceNo">Invoice No</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="invoicePrefix"><span jhiTranslate="shopApp.order.invoicePrefix">Invoice Prefix</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="firstname"><span jhiTranslate="shopApp.order.firstname">Firstname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastname"><span jhiTranslate="shopApp.order.lastname">Lastname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="email"><span jhiTranslate="shopApp.order.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="telephone"><span jhiTranslate="shopApp.order.telephone">Telephone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="fax"><span jhiTranslate="shopApp.order.fax">Fax</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingFirstname"><span jhiTranslate="shopApp.order.shippingFirstname">Shipping Firstname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingLastname"><span jhiTranslate="shopApp.order.shippingLastname">Shipping Lastname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingCompany"><span jhiTranslate="shopApp.order.shippingCompany">Shipping Company</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingAddress1"><span jhiTranslate="shopApp.order.shippingAddress1">Shipping Address 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingAddress2"><span jhiTranslate="shopApp.order.shippingAddress2">Shipping Address 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingCity"><span jhiTranslate="shopApp.order.shippingCity">Shipping City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingPostcode"><span jhiTranslate="shopApp.order.shippingPostcode">Shipping Postcode</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingCountry"><span jhiTranslate="shopApp.order.shippingCountry">Shipping Country</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingZone"><span jhiTranslate="shopApp.order.shippingZone">Shipping Zone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingAddressFormat"><span jhiTranslate="shopApp.order.shippingAddressFormat">Shipping Address Format</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingMethod"><span jhiTranslate="shopApp.order.shippingMethod">Shipping Method</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentFirstname"><span jhiTranslate="shopApp.order.paymentFirstname">Payment Firstname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentLastname"><span jhiTranslate="shopApp.order.paymentLastname">Payment Lastname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentCompany"><span jhiTranslate="shopApp.order.paymentCompany">Payment Company</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentAddress1"><span jhiTranslate="shopApp.order.paymentAddress1">Payment Address 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentAddress2"><span jhiTranslate="shopApp.order.paymentAddress2">Payment Address 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentCity"><span jhiTranslate="shopApp.order.paymentCity">Payment City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentPostcode"><span jhiTranslate="shopApp.order.paymentPostcode">Payment Postcode</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentCountry"><span jhiTranslate="shopApp.order.paymentCountry">Payment Country</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentZone"><span jhiTranslate="shopApp.order.paymentZone">Payment Zone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentAddressFormat"><span jhiTranslate="shopApp.order.paymentAddressFormat">Payment Address Format</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentMethod"><span jhiTranslate="shopApp.order.paymentMethod">Payment Method</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="comment"><span jhiTranslate="shopApp.order.comment">Comment</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="total"><span jhiTranslate="shopApp.order.total">Total</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="reward"><span jhiTranslate="shopApp.order.reward">Reward</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="commision"><span jhiTranslate="shopApp.order.commision">Commision</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="currencyCode"><span jhiTranslate="shopApp.order.currencyCode">Currency Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="currencyValue"><span jhiTranslate="shopApp.order.currencyValue">Currency Value</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ip"><span jhiTranslate="shopApp.order.ip">Ip</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentFlag"><span jhiTranslate="shopApp.order.paymentFlag">Payment Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="orderName"><span jhiTranslate="shopApp.order.orderName">Order Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="customerIdId"><span jhiTranslate="shopApp.order.customerId">Customer Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="currencyIdId"><span jhiTranslate="shopApp.order.currencyId">Currency Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="orderStatusIdId"><span jhiTranslate="shopApp.order.orderStatusId">Order Status Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let order of orders ;trackBy: trackId">
+                <td><a [routerLink]="['/order', order.id, 'view' ]">{{order.id}}</a></td>
+                <td>{{order.invoiceNo}}</td>
+                <td>{{order.invoicePrefix}}</td>
+                <td>{{order.firstname}}</td>
+                <td>{{order.lastname}}</td>
+                <td>{{order.email}}</td>
+                <td>{{order.telephone}}</td>
+                <td>{{order.fax}}</td>
+                <td>{{order.shippingFirstname}}</td>
+                <td>{{order.shippingLastname}}</td>
+                <td>{{order.shippingCompany}}</td>
+                <td>{{order.shippingAddress1}}</td>
+                <td>{{order.shippingAddress2}}</td>
+                <td>{{order.shippingCity}}</td>
+                <td>{{order.shippingPostcode}}</td>
+                <td>{{order.shippingCountry}}</td>
+                <td>{{order.shippingZone}}</td>
+                <td>{{order.shippingAddressFormat}}</td>
+                <td>{{order.shippingMethod}}</td>
+                <td>{{order.paymentFirstname}}</td>
+                <td>{{order.paymentLastname}}</td>
+                <td>{{order.paymentCompany}}</td>
+                <td>{{order.paymentAddress1}}</td>
+                <td>{{order.paymentAddress2}}</td>
+                <td>{{order.paymentCity}}</td>
+                <td>{{order.paymentPostcode}}</td>
+                <td>{{order.paymentCountry}}</td>
+                <td>{{order.paymentZone}}</td>
+                <td>{{order.paymentAddressFormat}}</td>
+                <td>{{order.paymentMethod}}</td>
+                <td>{{order.comment}}</td>
+                <td>{{order.total}}</td>
+                <td>{{order.reward}}</td>
+                <td>{{order.commision}}</td>
+                <td>{{order.currencyCode}}</td>
+                <td>{{order.currencyValue}}</td>
+                <td>{{order.ip}}</td>
+                <td>{{order.paymentFlag}}</td>
+                <td>{{order.orderName}}</td>
+                <td>
+                    <div *ngIf="order.customerIdId">
+                        <a [routerLink]="['/customer', order.customerIdId , 'view' ]" >{{order.customerIdId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="order.currencyIdId">
+                        <a [routerLink]="['/currency', order.currencyIdId , 'view' ]" >{{order.currencyIdId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="order.orderStatusIdId">
+                        <a [routerLink]="['/order-status', order.orderStatusIdId , 'view' ]" >{{order.orderStatusIdId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/order', order.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/order', order.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/order', { outlets: { popup: order.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="orders?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="shopApp.address.home.title">Addresses</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-address" [routerLink]="['/address/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="shopApp.address.home.createLabel">
+            Create a new Address
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="addresses?.length === 0">
+        <span jhiTranslate="shopApp.address.home.notFound">No addresses found</span>
+    </div>
+    <div class="table-responsive" *ngIf="addresses?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="firstName"><span jhiTranslate="shopApp.address.firstName">First Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastName"><span jhiTranslate="shopApp.address.lastName">Last Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="company"><span jhiTranslate="shopApp.address.company">Company</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="password"><span jhiTranslate="shopApp.address.password">Password</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="address1"><span jhiTranslate="shopApp.address.address1">Address 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="address2"><span jhiTranslate="shopApp.address.address2">Address 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="postcode"><span jhiTranslate="shopApp.address.postcode">Postcode</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="city"><span jhiTranslate="shopApp.address.city">City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="state"><span jhiTranslate="shopApp.address.state">State</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="addressType"><span jhiTranslate="shopApp.address.addressType">Address Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isActive"><span jhiTranslate="shopApp.address.isActive">Is Active</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdBy"><span jhiTranslate="shopApp.address.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedBy"><span jhiTranslate="shopApp.address.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdDate"><span jhiTranslate="shopApp.address.createdDate">Created Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedDate"><span jhiTranslate="shopApp.address.modifiedDate">Modified Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="customerIdId"><span jhiTranslate="shopApp.address.customerId">Customer Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="countryIdId"><span jhiTranslate="shopApp.address.countryId">Country Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="zoneIdId"><span jhiTranslate="shopApp.address.zoneId">Zone Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let address of addresses ;trackBy: trackId">
+                <td><a [routerLink]="['/address', address.id, 'view' ]">{{address.id}}</a></td>
+                <td>{{address.firstName}}</td>
+                <td>{{address.lastName}}</td>
+                <td>{{address.company}}</td>
+                <td>{{address.password}}</td>
+                <td>{{address.address1}}</td>
+                <td>{{address.address2}}</td>
+                <td>{{address.postcode}}</td>
+                <td>{{address.city}}</td>
+                <td>{{address.state}}</td>
+                <td>{{address.addressType}}</td>
+                <td>{{address.isActive}}</td>
+                <td>{{address.createdBy}}</td>
+                <td>{{address.modifiedBy}}</td>
+                <td>{{address.createdDate}}</td>
+                <td>{{address.modifiedDate}}</td>
+                <td>
+                    <div *ngIf="address.customerIdId">
+                        <a [routerLink]="['/customer', address.customerIdId , 'view' ]" >{{address.customerIdId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="address.countryIdId">
+                        <a [routerLink]="['/country', address.countryIdId , 'view' ]" >{{address.countryIdId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="address.zoneIdId">
+                        <a [routerLink]="['/zone', address.zoneIdId , 'view' ]" >{{address.zoneIdId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/address', address.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/address', address.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/address', { outlets: { popup: address.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="addresses?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orderStatus">
+            <h2><span jhiTranslate="shopApp.orderStatus.detail.title">Order Status</span> {{orderStatus.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.orderStatus.name">Name</span></dt>
+                <dd>
+                    <span>{{orderStatus.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderStatus.colorCode">Color Code</span></dt>
+                <dd>
+                    <span>{{orderStatus.colorCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderStatus.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{orderStatus.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderStatus.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{orderStatus.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderStatus.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{orderStatus.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderStatus.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{orderStatus.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderStatus.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{orderStatus.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-status', orderStatus.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

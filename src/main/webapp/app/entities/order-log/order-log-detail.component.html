@@ -1,0 +1,213 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orderLog">
+            <h2><span jhiTranslate="shopApp.orderLog.detail.title">Order Log</span> {{orderLog.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.orderLog.invoiceNo">Invoice No</span></dt>
+                <dd>
+                    <span>{{orderLog.invoiceNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.invocePerfix">Invoce Perfix</span></dt>
+                <dd>
+                    <span>{{orderLog.invocePerfix}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.firstname">Firstname</span></dt>
+                <dd>
+                    <span>{{orderLog.firstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.lastname">Lastname</span></dt>
+                <dd>
+                    <span>{{orderLog.lastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.email">Email</span></dt>
+                <dd>
+                    <span>{{orderLog.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{orderLog.telephone}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.fax">Fax</span></dt>
+                <dd>
+                    <span>{{orderLog.fax}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.shippingFristname">Shipping Fristname</span></dt>
+                <dd>
+                    <span>{{orderLog.shippingFristname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.shippingLastname">Shipping Lastname</span></dt>
+                <dd>
+                    <span>{{orderLog.shippingLastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.shippingCompany">Shipping Company</span></dt>
+                <dd>
+                    <span>{{orderLog.shippingCompany}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.shippingAddress1">Shipping Address 1</span></dt>
+                <dd>
+                    <span>{{orderLog.shippingAddress1}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.shippingAddress2">Shipping Address 2</span></dt>
+                <dd>
+                    <span>{{orderLog.shippingAddress2}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.shippingCity">Shipping City</span></dt>
+                <dd>
+                    <span>{{orderLog.shippingCity}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.shippingPostcode">Shipping Postcode</span></dt>
+                <dd>
+                    <span>{{orderLog.shippingPostcode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.shippingCountry">Shipping Country</span></dt>
+                <dd>
+                    <span>{{orderLog.shippingCountry}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.shippingZone">Shipping Zone</span></dt>
+                <dd>
+                    <span>{{orderLog.shippingZone}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.shippingAddressFormat">Shipping Address Format</span></dt>
+                <dd>
+                    <span>{{orderLog.shippingAddressFormat}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.shippingMethod">Shipping Method</span></dt>
+                <dd>
+                    <span>{{orderLog.shippingMethod}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentFirstname">Payment Firstname</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentFirstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentLastname">Payment Lastname</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentLastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentCompany">Payment Company</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentCompany}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentAddress1">Payment Address 1</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentAddress1}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentAddress2">Payment Address 2</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentAddress2}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentCity">Payment City</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentCity}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentPostcode">Payment Postcode</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentPostcode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentCountry">Payment Country</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentCountry}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentZone">Payment Zone</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentZone}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentAddressFormat">Payment Address Format</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentAddressFormat}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentMethod">Payment Method</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentMethod}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.comment">Comment</span></dt>
+                <dd>
+                    <span>{{orderLog.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.total">Total</span></dt>
+                <dd>
+                    <span>{{orderLog.total}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.reward">Reward</span></dt>
+                <dd>
+                    <span>{{orderLog.reward}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.commision">Commision</span></dt>
+                <dd>
+                    <span>{{orderLog.commision}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{orderLog.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.currencyValue">Currency Value</span></dt>
+                <dd>
+                    <span>{{orderLog.currencyValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.ip">Ip</span></dt>
+                <dd>
+                    <span>{{orderLog.ip}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.paymentFlag">Payment Flag</span></dt>
+                <dd>
+                    <span>{{orderLog.paymentFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.orderName">Order Name</span></dt>
+                <dd>
+                    <span>{{orderLog.orderName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{orderLog.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{orderLog.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{orderLog.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{orderLog.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{orderLog.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.customerId">Customer Id</span></dt>
+                <dd>
+                    <div *ngIf="orderLog.customerIdId">
+                        <a [routerLink]="['/customer', orderLog.customerIdId, 'view']">{{orderLog.customerIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.currencyId">Currency Id</span></dt>
+                <dd>
+                    <div *ngIf="orderLog.currencyIdId">
+                        <a [routerLink]="['/currency', orderLog.currencyIdId, 'view']">{{orderLog.currencyIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderLog.orderStatusId">Order Status Id</span></dt>
+                <dd>
+                    <div *ngIf="orderLog.orderStatusIdId">
+                        <a [routerLink]="['/order-status', orderLog.orderStatusIdId, 'view']">{{orderLog.orderStatusIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-log', orderLog.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

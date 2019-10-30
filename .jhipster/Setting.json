@@ -1,0 +1,147 @@
+{
+    "name": "Setting",
+    "fields": [
+        {
+            "fieldName": "url",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metaTagTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metaTagDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metaTagKeywords",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "storeName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "storeOwner",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "storeAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "storeEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "storeTelephone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "storeFax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "storeLogo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "storeLogoPath",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "maintenanceMode",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "storeLanguageName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "storeImage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "storeImagePath",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "google",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "facebook",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "twitter",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "instagram",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orderStatus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "invoicePrefix",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "itemsPerPage",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "categoryProductCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "modifiedBy",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modifiedDate",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "country",
+            "otherEntityRelationshipName": "setting",
+            "relationshipName": "countryId",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "zone",
+            "otherEntityRelationshipName": "setting",
+            "relationshipName": "zoneId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191030094842",
+    "entityTableName": "setting",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

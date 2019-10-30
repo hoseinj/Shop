@@ -1,0 +1,235 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-order-heading" jhiTranslate="shopApp.order.home.createOrEditLabel">Create or edit a Order</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.invoiceNo" for="field_invoiceNo">Invoice No</label>
+                    <input type="text" class="form-control" name="invoiceNo" id="field_invoiceNo"
+                           formControlName="invoiceNo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.invoicePrefix" for="field_invoicePrefix">Invoice Prefix</label>
+                    <input type="text" class="form-control" name="invoicePrefix" id="field_invoicePrefix"
+                           formControlName="invoicePrefix"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.firstname" for="field_firstname">Firstname</label>
+                    <input type="text" class="form-control" name="firstname" id="field_firstname"
+                           formControlName="firstname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.lastname" for="field_lastname">Lastname</label>
+                    <input type="text" class="form-control" name="lastname" id="field_lastname"
+                           formControlName="lastname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.telephone" for="field_telephone">Telephone</label>
+                    <input type="number" class="form-control" name="telephone" id="field_telephone"
+                           formControlName="telephone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.fax" for="field_fax">Fax</label>
+                    <input type="text" class="form-control" name="fax" id="field_fax"
+                           formControlName="fax"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.shippingFirstname" for="field_shippingFirstname">Shipping Firstname</label>
+                    <input type="text" class="form-control" name="shippingFirstname" id="field_shippingFirstname"
+                           formControlName="shippingFirstname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.shippingLastname" for="field_shippingLastname">Shipping Lastname</label>
+                    <input type="text" class="form-control" name="shippingLastname" id="field_shippingLastname"
+                           formControlName="shippingLastname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.shippingCompany" for="field_shippingCompany">Shipping Company</label>
+                    <input type="text" class="form-control" name="shippingCompany" id="field_shippingCompany"
+                           formControlName="shippingCompany"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.shippingAddress1" for="field_shippingAddress1">Shipping Address 1</label>
+                    <input type="text" class="form-control" name="shippingAddress1" id="field_shippingAddress1"
+                           formControlName="shippingAddress1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.shippingAddress2" for="field_shippingAddress2">Shipping Address 2</label>
+                    <input type="text" class="form-control" name="shippingAddress2" id="field_shippingAddress2"
+                           formControlName="shippingAddress2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.shippingCity" for="field_shippingCity">Shipping City</label>
+                    <input type="text" class="form-control" name="shippingCity" id="field_shippingCity"
+                           formControlName="shippingCity"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.shippingPostcode" for="field_shippingPostcode">Shipping Postcode</label>
+                    <input type="text" class="form-control" name="shippingPostcode" id="field_shippingPostcode"
+                           formControlName="shippingPostcode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.shippingCountry" for="field_shippingCountry">Shipping Country</label>
+                    <input type="text" class="form-control" name="shippingCountry" id="field_shippingCountry"
+                           formControlName="shippingCountry"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.shippingZone" for="field_shippingZone">Shipping Zone</label>
+                    <input type="text" class="form-control" name="shippingZone" id="field_shippingZone"
+                           formControlName="shippingZone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.shippingAddressFormat" for="field_shippingAddressFormat">Shipping Address Format</label>
+                    <input type="text" class="form-control" name="shippingAddressFormat" id="field_shippingAddressFormat"
+                           formControlName="shippingAddressFormat"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.shippingMethod" for="field_shippingMethod">Shipping Method</label>
+                    <input type="text" class="form-control" name="shippingMethod" id="field_shippingMethod"
+                           formControlName="shippingMethod"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentFirstname" for="field_paymentFirstname">Payment Firstname</label>
+                    <input type="text" class="form-control" name="paymentFirstname" id="field_paymentFirstname"
+                           formControlName="paymentFirstname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentLastname" for="field_paymentLastname">Payment Lastname</label>
+                    <input type="text" class="form-control" name="paymentLastname" id="field_paymentLastname"
+                           formControlName="paymentLastname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentCompany" for="field_paymentCompany">Payment Company</label>
+                    <input type="text" class="form-control" name="paymentCompany" id="field_paymentCompany"
+                           formControlName="paymentCompany"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentAddress1" for="field_paymentAddress1">Payment Address 1</label>
+                    <input type="text" class="form-control" name="paymentAddress1" id="field_paymentAddress1"
+                           formControlName="paymentAddress1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentAddress2" for="field_paymentAddress2">Payment Address 2</label>
+                    <input type="text" class="form-control" name="paymentAddress2" id="field_paymentAddress2"
+                           formControlName="paymentAddress2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentCity" for="field_paymentCity">Payment City</label>
+                    <input type="text" class="form-control" name="paymentCity" id="field_paymentCity"
+                           formControlName="paymentCity"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentPostcode" for="field_paymentPostcode">Payment Postcode</label>
+                    <input type="text" class="form-control" name="paymentPostcode" id="field_paymentPostcode"
+                           formControlName="paymentPostcode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentCountry" for="field_paymentCountry">Payment Country</label>
+                    <input type="text" class="form-control" name="paymentCountry" id="field_paymentCountry"
+                           formControlName="paymentCountry"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentZone" for="field_paymentZone">Payment Zone</label>
+                    <input type="text" class="form-control" name="paymentZone" id="field_paymentZone"
+                           formControlName="paymentZone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentAddressFormat" for="field_paymentAddressFormat">Payment Address Format</label>
+                    <input type="text" class="form-control" name="paymentAddressFormat" id="field_paymentAddressFormat"
+                           formControlName="paymentAddressFormat"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentMethod" for="field_paymentMethod">Payment Method</label>
+                    <input type="text" class="form-control" name="paymentMethod" id="field_paymentMethod"
+                           formControlName="paymentMethod"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.comment" for="field_comment">Comment</label>
+                    <input type="text" class="form-control" name="comment" id="field_comment"
+                           formControlName="comment"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.total" for="field_total">Total</label>
+                    <input type="number" class="form-control" name="total" id="field_total"
+                           formControlName="total"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.reward" for="field_reward">Reward</label>
+                    <input type="number" class="form-control" name="reward" id="field_reward"
+                           formControlName="reward"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.commision" for="field_commision">Commision</label>
+                    <input type="number" class="form-control" name="commision" id="field_commision"
+                           formControlName="commision"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.currencyCode" for="field_currencyCode">Currency Code</label>
+                    <input type="text" class="form-control" name="currencyCode" id="field_currencyCode"
+                           formControlName="currencyCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.currencyValue" for="field_currencyValue">Currency Value</label>
+                    <input type="number" class="form-control" name="currencyValue" id="field_currencyValue"
+                           formControlName="currencyValue"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.ip" for="field_ip">Ip</label>
+                    <input type="text" class="form-control" name="ip" id="field_ip"
+                           formControlName="ip"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.paymentFlag" for="field_paymentFlag">Payment Flag</label>
+                    <input type="number" class="form-control" name="paymentFlag" id="field_paymentFlag"
+                           formControlName="paymentFlag"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.orderName" for="field_orderName">Order Name</label>
+                    <input type="text" class="form-control" name="orderName" id="field_orderName"
+                           formControlName="orderName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.customerId" for="field_customerId">Customer Id</label>
+                    <select class="form-control" id="field_customerId" name="customerId" formControlName="customerIdId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customerOption.id" *ngFor="let customerOption of customers; trackBy: trackCustomerById">{{customerOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.currencyId" for="field_currencyId">Currency Id</label>
+                    <select class="form-control" id="field_currencyId" name="currencyId" formControlName="currencyIdId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="currencyOption.id" *ngFor="let currencyOption of currencies; trackBy: trackCurrencyById">{{currencyOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.order.orderStatusId" for="field_orderStatusId">Order Status Id</label>
+                    <select class="form-control" id="field_orderStatusId" name="orderStatusId" formControlName="orderStatusIdId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="orderStatusOption.id" *ngFor="let orderStatusOption of orderstatuses; trackBy: trackOrderStatusById">{{orderStatusOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

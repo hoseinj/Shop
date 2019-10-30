@@ -1,0 +1,31 @@
+{
+  "shopApp": {
+    "productDiscount": {
+      "home": {
+        "title": "Product Discounts",
+        "createLabel": "Create a new Product Discount",
+        "createOrEditLabel": "Create or edit a Product Discount",
+        "notFound": "No Product Discounts found"
+      },
+      "created": "A new Product Discount is created with identifier {{ param }}",
+      "updated": "A Product Discount is updated with identifier {{ param }}",
+      "deleted": "A Product Discount is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Discount {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Discount"
+      },
+      "quantity": "Quantity",
+      "priority": "Priority",
+      "pirce": "Pirce",
+      "dateStart": "Date Start",
+      "dateEnd": "Date End",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date"
+    }
+  }
+}

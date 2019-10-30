@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="categoryPath">
+            <h2><span jhiTranslate="shopApp.categoryPath.detail.title">Category Path</span> {{categoryPath.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.categoryPath.level">Level</span></dt>
+                <dd>
+                    <span>{{categoryPath.level}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.categoryPath.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{categoryPath.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.categoryPath.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{categoryPath.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.categoryPath.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{categoryPath.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.categoryPath.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{categoryPath.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.categoryPath.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{categoryPath.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.categoryPath.categoryId">Category Id</span></dt>
+                <dd>
+                    <div *ngIf="categoryPath.categoryIdId">
+                        <a [routerLink]="['/category', categoryPath.categoryIdId, 'view']">{{categoryPath.categoryIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/category-path', categoryPath.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
