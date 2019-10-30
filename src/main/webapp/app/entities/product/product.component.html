@@ -1,0 +1,134 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="shopApp.product.home.title">Products</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-product" [routerLink]="['/product/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="shopApp.product.home.createLabel">
+            Create a new Product
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="products?.length === 0">
+        <span jhiTranslate="shopApp.product.home.notFound">No products found</span>
+    </div>
+    <div class="table-responsive" *ngIf="products?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sku"><span jhiTranslate="shopApp.product.sku">Sku</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="upc"><span jhiTranslate="shopApp.product.upc">Upc</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="quantity"><span jhiTranslate="shopApp.product.quantity">Quantity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="image"><span jhiTranslate="shopApp.product.image">Image</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="imagePath"><span jhiTranslate="shopApp.product.imagePath">Image Path</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shipping"><span jhiTranslate="shopApp.product.shipping">Shipping</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="price"><span jhiTranslate="shopApp.product.price">Price</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="dateAvailable"><span jhiTranslate="shopApp.product.dateAvailable">Date Available</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sortOrder"><span jhiTranslate="shopApp.product.sortOrder">Sort Order</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="shopApp.product.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="description"><span jhiTranslate="shopApp.product.description">Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="amount"><span jhiTranslate="shopApp.product.amount">Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="metaTagTitle"><span jhiTranslate="shopApp.product.metaTagTitle">Meta Tag Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="metaTagDescription"><span jhiTranslate="shopApp.product.metaTagDescription">Meta Tag Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="metaTagKeyword"><span jhiTranslate="shopApp.product.metaTagKeyword">Meta Tag Keyword</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="discount"><span jhiTranslate="shopApp.product.discount">Discount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="subtractStock"><span jhiTranslate="shopApp.product.subtractStock">Subtract Stock</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="minimumQuantity"><span jhiTranslate="shopApp.product.minimumQuantity">Minimum Quantity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="location"><span jhiTranslate="shopApp.product.location">Location</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="wishlistStatus"><span jhiTranslate="shopApp.product.wishlistStatus">Wishlist Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="deletFlag"><span jhiTranslate="shopApp.product.deletFlag">Delet Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isFeatured"><span jhiTranslate="shopApp.product.isFeatured">Is Featured</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="rating"><span jhiTranslate="shopApp.product.rating">Rating</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="condition"><span jhiTranslate="shopApp.product.condition">Condition</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isActive"><span jhiTranslate="shopApp.product.isActive">Is Active</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdBy"><span jhiTranslate="shopApp.product.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedBy"><span jhiTranslate="shopApp.product.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdDate"><span jhiTranslate="shopApp.product.createdDate">Created Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedDate"><span jhiTranslate="shopApp.product.modifiedDate">Modified Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="stockStatusidId"><span jhiTranslate="shopApp.product.stockStatusid">Stock Statusid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="manufacturerIdId"><span jhiTranslate="shopApp.product.manufacturerId">Manufacturer Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let product of products ;trackBy: trackId">
+                <td><a [routerLink]="['/product', product.id, 'view' ]">{{product.id}}</a></td>
+                <td>{{product.sku}}</td>
+                <td>{{product.upc}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.image}}</td>
+                <td>{{product.imagePath}}</td>
+                <td>{{product.shipping}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.dateAvailable}}</td>
+                <td>{{product.sortOrder}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.amount}}</td>
+                <td>{{product.metaTagTitle}}</td>
+                <td>{{product.metaTagDescription}}</td>
+                <td>{{product.metaTagKeyword}}</td>
+                <td>{{product.discount}}</td>
+                <td>{{product.subtractStock}}</td>
+                <td>{{product.minimumQuantity}}</td>
+                <td>{{product.location}}</td>
+                <td>{{product.wishlistStatus}}</td>
+                <td>{{product.deletFlag}}</td>
+                <td>{{product.isFeatured}}</td>
+                <td>{{product.rating}}</td>
+                <td>{{product.condition}}</td>
+                <td>{{product.isActive}}</td>
+                <td>{{product.createdBy}}</td>
+                <td>{{product.modifiedBy}}</td>
+                <td>{{product.createdDate}}</td>
+                <td>{{product.modifiedDate}}</td>
+                <td>
+                    <div *ngIf="product.stockStatusidId">
+                        <a [routerLink]="['/stock-status', product.stockStatusidId , 'view' ]" >{{product.stockStatusidId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="product.manufacturerIdId">
+                        <a [routerLink]="['/manufacturer', product.manufacturerIdId , 'view' ]" >{{product.manufacturerIdId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/product', product.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/product', product.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/product', { outlets: { popup: product.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="products?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

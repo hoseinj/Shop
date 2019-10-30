@@ -1,0 +1,37 @@
+{
+  "shopApp": {
+    "productRating": {
+      "home": {
+        "title": "Product Ratings",
+        "createLabel": "Create a new Product Rating",
+        "createOrEditLabel": "Create or edit a Product Rating",
+        "notFound": "No Product Ratings found"
+      },
+      "created": "A new Product Rating is created with identifier {{ param }}",
+      "updated": "A Product Rating is updated with identifier {{ param }}",
+      "deleted": "A Product Rating is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Rating {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Rating"
+      },
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "email": "Email",
+      "rating": "Rating",
+      "review": "Review",
+      "imagePath": "Image Path",
+      "image": "Image",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date",
+      "product": "Product",
+      "productId": "Product Id",
+      "customerId": "Customer Id",
+      "customer": "Customer"
+    }
+  }
+}

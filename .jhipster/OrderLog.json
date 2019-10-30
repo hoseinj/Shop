@@ -1,0 +1,210 @@
+{
+    "name": "OrderLog",
+    "fields": [
+        {
+            "fieldName": "invoiceNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "invocePerfix",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingFristname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingLastname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingCompany",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingAddress1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingAddress2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingCity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingPostcode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingCountry",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingZone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingAddressFormat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingMethod",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentFirstname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentLastname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentCompany",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentAddress1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentAddress2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentCity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentPostcode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentCountry",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentZone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentAddressFormat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentMethod",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "total",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "reward",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "commision",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "currencyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "currencyValue",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "ip",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "orderName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "modifiedBy",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modifiedDate",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "customer",
+            "otherEntityRelationshipName": "orderLog",
+            "relationshipName": "customerId",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "currency",
+            "otherEntityRelationshipName": "orderLog",
+            "relationshipName": "currencyId",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "orderStatus",
+            "otherEntityRelationshipName": "orderLog",
+            "relationshipName": "orderStatusId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191030103956",
+    "entityTableName": "order_log",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

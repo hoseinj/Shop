@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="shopPage">
+            <h2><span jhiTranslate="shopApp.shopPage.detail.title">Shop Page</span> {{shopPage.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.shopPage.title">Title</span></dt>
+                <dd>
+                    <span>{{shopPage.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.intro">Intro</span></dt>
+                <dd>
+                    <span>{{shopPage.intro}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.fullText">Full Text</span></dt>
+                <dd>
+                    <span>{{shopPage.fullText}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.sortOrder">Sort Order</span></dt>
+                <dd>
+                    <span>{{shopPage.sortOrder}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.metaTagTitle">Meta Tag Title</span></dt>
+                <dd>
+                    <span>{{shopPage.metaTagTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.metaTagDescroption">Meta Tag Descroption</span></dt>
+                <dd>
+                    <span>{{shopPage.metaTagDescroption}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.metaTagKeywords">Meta Tag Keywords</span></dt>
+                <dd>
+                    <span>{{shopPage.metaTagKeywords}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.viewPageCount">View Page Count</span></dt>
+                <dd>
+                    <span>{{shopPage.viewPageCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{shopPage.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{shopPage.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{shopPage.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{shopPage.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.shopPage.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{shopPage.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/shop-page', shopPage.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

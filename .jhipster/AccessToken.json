@@ -1,0 +1,34 @@
+{
+    "name": "AccessToken",
+    "fields": [
+        {
+            "fieldName": "token",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "shopUser",
+            "otherEntityName": "shopUser",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "shopUser",
+            "otherEntityRelationshipName": "accessToken",
+            "relationshipName": "shopUserId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191030104016",
+    "entityTableName": "access_token",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

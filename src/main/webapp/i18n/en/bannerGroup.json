@@ -1,0 +1,27 @@
+{
+  "shopApp": {
+    "bannerGroup": {
+      "home": {
+        "title": "Banner Groups",
+        "createLabel": "Create a new Banner Group",
+        "createOrEditLabel": "Create or edit a Banner Group",
+        "notFound": "No Banner Groups found"
+      },
+      "created": "A new Banner Group is created with identifier {{ param }}",
+      "updated": "A Banner Group is updated with identifier {{ param }}",
+      "deleted": "A Banner Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Banner Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Banner Group"
+      },
+      "title": "Title",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date"
+    }
+  }
+}

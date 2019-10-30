@@ -1,0 +1,134 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="shopApp.setting.home.title">Settings</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-setting" [routerLink]="['/setting/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="shopApp.setting.home.createLabel">
+            Create a new Setting
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="settings?.length === 0">
+        <span jhiTranslate="shopApp.setting.home.notFound">No settings found</span>
+    </div>
+    <div class="table-responsive" *ngIf="settings?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="url"><span jhiTranslate="shopApp.setting.url">Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="metaTagTitle"><span jhiTranslate="shopApp.setting.metaTagTitle">Meta Tag Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="metaTagDescription"><span jhiTranslate="shopApp.setting.metaTagDescription">Meta Tag Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="metaTagKeywords"><span jhiTranslate="shopApp.setting.metaTagKeywords">Meta Tag Keywords</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="storeName"><span jhiTranslate="shopApp.setting.storeName">Store Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="storeOwner"><span jhiTranslate="shopApp.setting.storeOwner">Store Owner</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="storeAddress"><span jhiTranslate="shopApp.setting.storeAddress">Store Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="storeEmail"><span jhiTranslate="shopApp.setting.storeEmail">Store Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="storeTelephone"><span jhiTranslate="shopApp.setting.storeTelephone">Store Telephone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="storeFax"><span jhiTranslate="shopApp.setting.storeFax">Store Fax</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="storeLogo"><span jhiTranslate="shopApp.setting.storeLogo">Store Logo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="storeLogoPath"><span jhiTranslate="shopApp.setting.storeLogoPath">Store Logo Path</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="maintenanceMode"><span jhiTranslate="shopApp.setting.maintenanceMode">Maintenance Mode</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="storeLanguageName"><span jhiTranslate="shopApp.setting.storeLanguageName">Store Language Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="storeImage"><span jhiTranslate="shopApp.setting.storeImage">Store Image</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="storeImagePath"><span jhiTranslate="shopApp.setting.storeImagePath">Store Image Path</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="google"><span jhiTranslate="shopApp.setting.google">Google</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="facebook"><span jhiTranslate="shopApp.setting.facebook">Facebook</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="twitter"><span jhiTranslate="shopApp.setting.twitter">Twitter</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="instagram"><span jhiTranslate="shopApp.setting.instagram">Instagram</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="orderStatus"><span jhiTranslate="shopApp.setting.orderStatus">Order Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="invoicePrefix"><span jhiTranslate="shopApp.setting.invoicePrefix">Invoice Prefix</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="itemsPerPage"><span jhiTranslate="shopApp.setting.itemsPerPage">Items Per Page</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="categoryProductCount"><span jhiTranslate="shopApp.setting.categoryProductCount">Category Product Count</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isActive"><span jhiTranslate="shopApp.setting.isActive">Is Active</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdBy"><span jhiTranslate="shopApp.setting.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedBy"><span jhiTranslate="shopApp.setting.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdDate"><span jhiTranslate="shopApp.setting.createdDate">Created Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedDate"><span jhiTranslate="shopApp.setting.modifiedDate">Modified Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="countryIdId"><span jhiTranslate="shopApp.setting.countryId">Country Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="zoneIdId"><span jhiTranslate="shopApp.setting.zoneId">Zone Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let setting of settings ;trackBy: trackId">
+                <td><a [routerLink]="['/setting', setting.id, 'view' ]">{{setting.id}}</a></td>
+                <td>{{setting.url}}</td>
+                <td>{{setting.metaTagTitle}}</td>
+                <td>{{setting.metaTagDescription}}</td>
+                <td>{{setting.metaTagKeywords}}</td>
+                <td>{{setting.storeName}}</td>
+                <td>{{setting.storeOwner}}</td>
+                <td>{{setting.storeAddress}}</td>
+                <td>{{setting.storeEmail}}</td>
+                <td>{{setting.storeTelephone}}</td>
+                <td>{{setting.storeFax}}</td>
+                <td>{{setting.storeLogo}}</td>
+                <td>{{setting.storeLogoPath}}</td>
+                <td>{{setting.maintenanceMode}}</td>
+                <td>{{setting.storeLanguageName}}</td>
+                <td>{{setting.storeImage}}</td>
+                <td>{{setting.storeImagePath}}</td>
+                <td>{{setting.google}}</td>
+                <td>{{setting.facebook}}</td>
+                <td>{{setting.twitter}}</td>
+                <td>{{setting.instagram}}</td>
+                <td>{{setting.orderStatus}}</td>
+                <td>{{setting.invoicePrefix}}</td>
+                <td>{{setting.itemsPerPage}}</td>
+                <td>{{setting.categoryProductCount}}</td>
+                <td>{{setting.isActive}}</td>
+                <td>{{setting.createdBy}}</td>
+                <td>{{setting.modifiedBy}}</td>
+                <td>{{setting.createdDate}}</td>
+                <td>{{setting.modifiedDate}}</td>
+                <td>
+                    <div *ngIf="setting.countryIdId">
+                        <a [routerLink]="['/country', setting.countryIdId , 'view' ]" >{{setting.countryIdId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="setting.zoneIdId">
+                        <a [routerLink]="['/zone', setting.zoneIdId , 'view' ]" >{{setting.zoneIdId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/setting', setting.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/setting', setting.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/setting', { outlets: { popup: setting.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="settings?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

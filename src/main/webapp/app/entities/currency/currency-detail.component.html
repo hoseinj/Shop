@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="currency">
+            <h2><span jhiTranslate="shopApp.currency.detail.title">Currency</span> {{currency.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.currency.title">Title</span></dt>
+                <dd>
+                    <span>{{currency.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.currency.code">Code</span></dt>
+                <dd>
+                    <span>{{currency.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.currency.symbolLeft">Symbol Left</span></dt>
+                <dd>
+                    <span>{{currency.symbolLeft}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.currency.symbolRight">Symbol Right</span></dt>
+                <dd>
+                    <span>{{currency.symbolRight}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.currency.decimalPlace">Decimal Place</span></dt>
+                <dd>
+                    <span>{{currency.decimalPlace}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.currency.value">Value</span></dt>
+                <dd>
+                    <span>{{currency.value}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.currency.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{currency.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.currency.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{currency.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.currency.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{currency.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.currency.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{currency.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.currency.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{currency.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/currency', currency.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

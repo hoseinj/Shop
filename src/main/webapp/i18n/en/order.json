@@ -1,0 +1,63 @@
+{
+  "shopApp": {
+    "order": {
+      "home": {
+        "title": "Orders",
+        "createLabel": "Create a new Order",
+        "createOrEditLabel": "Create or edit a Order",
+        "notFound": "No Orders found"
+      },
+      "created": "A new Order is created with identifier {{ param }}",
+      "updated": "A Order is updated with identifier {{ param }}",
+      "deleted": "A Order is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Order {{ id }}?"
+      },
+      "detail": {
+        "title": "Order"
+      },
+      "invoiceNo": "Invoice No",
+      "invoicePrefix": "Invoice Prefix",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "email": "Email",
+      "telephone": "Telephone",
+      "fax": "Fax",
+      "shippingFirstname": "Shipping Firstname",
+      "shippingLastname": "Shipping Lastname",
+      "shippingCompany": "Shipping Company",
+      "shippingAddress1": "Shipping Address 1",
+      "shippingAddress2": "Shipping Address 2",
+      "shippingCity": "Shipping City",
+      "shippingPostcode": "Shipping Postcode",
+      "shippingCountry": "Shipping Country",
+      "shippingZone": "Shipping Zone",
+      "shippingAddressFormat": "Shipping Address Format",
+      "shippingMethod": "Shipping Method",
+      "paymentFirstname": "Payment Firstname",
+      "paymentLastname": "Payment Lastname",
+      "paymentCompany": "Payment Company",
+      "paymentAddress1": "Payment Address 1",
+      "paymentAddress2": "Payment Address 2",
+      "paymentCity": "Payment City",
+      "paymentPostcode": "Payment Postcode",
+      "paymentCountry": "Payment Country",
+      "paymentZone": "Payment Zone",
+      "paymentAddressFormat": "Payment Address Format",
+      "paymentMethod": "Payment Method",
+      "comment": "Comment",
+      "total": "Total",
+      "reward": "Reward",
+      "commision": "Commision",
+      "currencyCode": "Currency Code",
+      "currencyValue": "Currency Value",
+      "ip": "Ip",
+      "paymentFlag": "Payment Flag",
+      "orderName": "Order Name",
+      "porductLists": "Porduct Lists",
+      "customerId": "Customer Id",
+      "currencyId": "Currency Id",
+      "orderStatusId": "Order Status Id"
+    }
+  }
+}

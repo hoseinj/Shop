@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productDiscount">
+            <h2><span jhiTranslate="shopApp.productDiscount.detail.title">Product Discount</span> {{productDiscount.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.productDiscount.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{productDiscount.quantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productDiscount.priority">Priority</span></dt>
+                <dd>
+                    <span>{{productDiscount.priority}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productDiscount.pirce">Pirce</span></dt>
+                <dd>
+                    <span>{{productDiscount.pirce}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productDiscount.dateStart">Date Start</span></dt>
+                <dd>
+                    <span>{{productDiscount.dateStart}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productDiscount.dateEnd">Date End</span></dt>
+                <dd>
+                    <span>{{productDiscount.dateEnd}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productDiscount.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{productDiscount.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productDiscount.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{productDiscount.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productDiscount.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{productDiscount.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productDiscount.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{productDiscount.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.productDiscount.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{productDiscount.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-discount', productDiscount.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

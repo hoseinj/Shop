@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="porductDescription">
+            <h2><span jhiTranslate="shopApp.porductDescription.detail.title">Porduct Description</span> {{porductDescription.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.porductDescription.name">Name</span></dt>
+                <dd>
+                    <span>{{porductDescription.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.porductDescription.description">Description</span></dt>
+                <dd>
+                    <span>{{porductDescription.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.porductDescription.metaDescription">Meta Description</span></dt>
+                <dd>
+                    <span>{{porductDescription.metaDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.porductDescription.metaKeyword">Meta Keyword</span></dt>
+                <dd>
+                    <span>{{porductDescription.metaKeyword}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.porductDescription.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{porductDescription.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.porductDescription.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{porductDescription.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.porductDescription.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{porductDescription.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.porductDescription.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{porductDescription.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.porductDescription.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{porductDescription.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/porduct-description', porductDescription.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

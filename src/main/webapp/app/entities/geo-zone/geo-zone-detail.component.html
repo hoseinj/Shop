@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="geoZone">
+            <h2><span jhiTranslate="shopApp.geoZone.detail.title">Geo Zone</span> {{geoZone.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.geoZone.name">Name</span></dt>
+                <dd>
+                    <span>{{geoZone.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.geoZone.description">Description</span></dt>
+                <dd>
+                    <span>{{geoZone.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.geoZone.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{geoZone.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.geoZone.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{geoZone.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.geoZone.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{geoZone.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.geoZone.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{geoZone.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.geoZone.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{geoZone.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/geo-zone', geoZone.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

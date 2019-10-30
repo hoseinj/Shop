@@ -1,0 +1,34 @@
+{
+  "shopApp": {
+    "shopPage": {
+      "home": {
+        "title": "Shop Pages",
+        "createLabel": "Create a new Shop Page",
+        "createOrEditLabel": "Create or edit a Shop Page",
+        "notFound": "No Shop Pages found"
+      },
+      "created": "A new Shop Page is created with identifier {{ param }}",
+      "updated": "A Shop Page is updated with identifier {{ param }}",
+      "deleted": "A Shop Page is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Shop Page {{ id }}?"
+      },
+      "detail": {
+        "title": "Shop Page"
+      },
+      "title": "Title",
+      "intro": "Intro",
+      "fullText": "Full Text",
+      "sortOrder": "Sort Order",
+      "metaTagTitle": "Meta Tag Title",
+      "metaTagDescroption": "Meta Tag Descroption",
+      "metaTagKeywords": "Meta Tag Keywords",
+      "viewPageCount": "View Page Count",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date"
+    }
+  }
+}

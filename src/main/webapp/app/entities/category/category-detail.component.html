@@ -1,0 +1,81 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="category">
+            <h2><span jhiTranslate="shopApp.category.detail.title">Category</span> {{category.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.category.name">Name</span></dt>
+                <dd>
+                    <span>{{category.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.image">Image</span></dt>
+                <dd>
+                    <span>{{category.image}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.imagePath">Image Path</span></dt>
+                <dd>
+                    <span>{{category.imagePath}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.parentInt">Parent Int</span></dt>
+                <dd>
+                    <span>{{category.parentInt}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.sortOrder">Sort Order</span></dt>
+                <dd>
+                    <span>{{category.sortOrder}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.metaTagTitle">Meta Tag Title</span></dt>
+                <dd>
+                    <span>{{category.metaTagTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.metaTagDescription">Meta Tag Description</span></dt>
+                <dd>
+                    <span>{{category.metaTagDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.metaTagKeyword">Meta Tag Keyword</span></dt>
+                <dd>
+                    <span>{{category.metaTagKeyword}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{category.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{category.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{category.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{category.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{category.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.category.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="category.productId">
+                        <a [routerLink]="['/product', category.productId, 'view']">{{category.productId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/category', category.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

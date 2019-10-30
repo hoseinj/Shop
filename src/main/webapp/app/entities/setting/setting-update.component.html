@@ -1,0 +1,183 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-setting-heading" jhiTranslate="shopApp.setting.home.createOrEditLabel">Create or edit a Setting</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.url" for="field_url">Url</label>
+                    <input type="text" class="form-control" name="url" id="field_url"
+                           formControlName="url"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.metaTagTitle" for="field_metaTagTitle">Meta Tag Title</label>
+                    <input type="text" class="form-control" name="metaTagTitle" id="field_metaTagTitle"
+                           formControlName="metaTagTitle"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.metaTagDescription" for="field_metaTagDescription">Meta Tag Description</label>
+                    <input type="text" class="form-control" name="metaTagDescription" id="field_metaTagDescription"
+                           formControlName="metaTagDescription"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.metaTagKeywords" for="field_metaTagKeywords">Meta Tag Keywords</label>
+                    <input type="text" class="form-control" name="metaTagKeywords" id="field_metaTagKeywords"
+                           formControlName="metaTagKeywords"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.storeName" for="field_storeName">Store Name</label>
+                    <input type="text" class="form-control" name="storeName" id="field_storeName"
+                           formControlName="storeName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.storeOwner" for="field_storeOwner">Store Owner</label>
+                    <input type="text" class="form-control" name="storeOwner" id="field_storeOwner"
+                           formControlName="storeOwner"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.storeAddress" for="field_storeAddress">Store Address</label>
+                    <input type="text" class="form-control" name="storeAddress" id="field_storeAddress"
+                           formControlName="storeAddress"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.storeEmail" for="field_storeEmail">Store Email</label>
+                    <input type="text" class="form-control" name="storeEmail" id="field_storeEmail"
+                           formControlName="storeEmail"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.storeTelephone" for="field_storeTelephone">Store Telephone</label>
+                    <input type="text" class="form-control" name="storeTelephone" id="field_storeTelephone"
+                           formControlName="storeTelephone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.storeFax" for="field_storeFax">Store Fax</label>
+                    <input type="text" class="form-control" name="storeFax" id="field_storeFax"
+                           formControlName="storeFax"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.storeLogo" for="field_storeLogo">Store Logo</label>
+                    <input type="text" class="form-control" name="storeLogo" id="field_storeLogo"
+                           formControlName="storeLogo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.storeLogoPath" for="field_storeLogoPath">Store Logo Path</label>
+                    <input type="text" class="form-control" name="storeLogoPath" id="field_storeLogoPath"
+                           formControlName="storeLogoPath"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.maintenanceMode" for="field_maintenanceMode">Maintenance Mode</label>
+                    <input type="number" class="form-control" name="maintenanceMode" id="field_maintenanceMode"
+                           formControlName="maintenanceMode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.storeLanguageName" for="field_storeLanguageName">Store Language Name</label>
+                    <input type="text" class="form-control" name="storeLanguageName" id="field_storeLanguageName"
+                           formControlName="storeLanguageName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.storeImage" for="field_storeImage">Store Image</label>
+                    <input type="text" class="form-control" name="storeImage" id="field_storeImage"
+                           formControlName="storeImage"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.storeImagePath" for="field_storeImagePath">Store Image Path</label>
+                    <input type="text" class="form-control" name="storeImagePath" id="field_storeImagePath"
+                           formControlName="storeImagePath"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.google" for="field_google">Google</label>
+                    <input type="text" class="form-control" name="google" id="field_google"
+                           formControlName="google"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.facebook" for="field_facebook">Facebook</label>
+                    <input type="text" class="form-control" name="facebook" id="field_facebook"
+                           formControlName="facebook"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.twitter" for="field_twitter">Twitter</label>
+                    <input type="text" class="form-control" name="twitter" id="field_twitter"
+                           formControlName="twitter"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.instagram" for="field_instagram">Instagram</label>
+                    <input type="text" class="form-control" name="instagram" id="field_instagram"
+                           formControlName="instagram"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.orderStatus" for="field_orderStatus">Order Status</label>
+                    <input type="number" class="form-control" name="orderStatus" id="field_orderStatus"
+                           formControlName="orderStatus"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.invoicePrefix" for="field_invoicePrefix">Invoice Prefix</label>
+                    <input type="text" class="form-control" name="invoicePrefix" id="field_invoicePrefix"
+                           formControlName="invoicePrefix"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.itemsPerPage" for="field_itemsPerPage">Items Per Page</label>
+                    <input type="number" class="form-control" name="itemsPerPage" id="field_itemsPerPage"
+                           formControlName="itemsPerPage"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.categoryProductCount" for="field_categoryProductCount">Category Product Count</label>
+                    <input type="number" class="form-control" name="categoryProductCount" id="field_categoryProductCount"
+                           formControlName="categoryProductCount"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.isActive" for="field_isActive">Is Active</label>
+                    <input type="number" class="form-control" name="isActive" id="field_isActive"
+                           formControlName="isActive"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.createdBy" for="field_createdBy">Created By</label>
+                    <input type="number" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <input type="number" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                           formControlName="modifiedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.createdDate" for="field_createdDate">Created Date</label>
+                    <input type="text" class="form-control" name="createdDate" id="field_createdDate"
+                           formControlName="createdDate"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.modifiedDate" for="field_modifiedDate">Modified Date</label>
+                    <input type="text" class="form-control" name="modifiedDate" id="field_modifiedDate"
+                           formControlName="modifiedDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.countryId" for="field_countryId">Country Id</label>
+                    <select class="form-control" id="field_countryId" name="countryId" formControlName="countryIdId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="countryOption.id" *ngFor="let countryOption of countries; trackBy: trackCountryById">{{countryOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.setting.zoneId" for="field_zoneId">Zone Id</label>
+                    <select class="form-control" id="field_zoneId" name="zoneId" formControlName="zoneIdId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="zoneOption.id" *ngFor="let zoneOption of zones; trackBy: trackZoneById">{{zoneOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+{
+  "shopApp": {
+    "migrations": {
+      "home": {
+        "title": "Migrations",
+        "createLabel": "Create a new Migrations",
+        "createOrEditLabel": "Create or edit a Migrations",
+        "notFound": "No Migrations found"
+      },
+      "created": "A new Migrations is created with identifier {{ param }}",
+      "updated": "A Migrations is updated with identifier {{ param }}",
+      "deleted": "A Migrations is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Migrations {{ id }}?"
+      },
+      "detail": {
+        "title": "Migrations"
+      },
+      "timestamp": "Timestamp",
+      "name": "Name",
+      "invoiceNo": "Invoice No",
+      "invoicePrefix": "Invoice Prefix",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "email": "Email",
+      "telephone": "Telephone",
+      "fax": "Fax",
+      "shippingFirstname": "Shipping Firstname",
+      "shippingLastname": "Shipping Lastname",
+      "shippingCompany": "Shipping Company",
+      "shippingAddress1": "Shipping Address 1",
+      "shippingAddress2": "Shipping Address 2",
+      "shippingCity": "Shipping City",
+      "shippingPostcode": "Shipping Postcode",
+      "shippingCountry": "Shipping Country",
+      "shippingZone": "Shipping Zone",
+      "shippingAddressFormat": "Shipping Address Format",
+      "shippingMethod": "Shipping Method",
+      "paymentFirstname": "Payment Firstname",
+      "paymentLastname": "Payment Lastname",
+      "paymentCompany": "Payment Company",
+      "paymentAddress1": "Payment Address 1",
+      "paymentAddress2": "Payment Address 2",
+      "paymentCity": "Payment City",
+      "paymentPostcode": "Payment Postcode",
+      "paymentCountry": "Payment Country",
+      "paymentZone": "Payment Zone",
+      "paymentAddressFormat": "Payment Address Format",
+      "paymentMethod": "Payment Method",
+      "comment": "Comment",
+      "total": "Total",
+      "reward": "Reward",
+      "commision": "Commision",
+      "currencyCode": "Currency Code",
+      "currencyValue": "Currency Value",
+      "ip": "Ip",
+      "paymentFlag": "Payment Flag",
+      "orderName": "Order Name",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date"
+    }
+  }
+}

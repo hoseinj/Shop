@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="country">
+            <h2><span jhiTranslate="shopApp.country.detail.title">Country</span> {{country.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.country.name">Name</span></dt>
+                <dd>
+                    <span>{{country.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.country.isoCode2">Iso Code 2</span></dt>
+                <dd>
+                    <span>{{country.isoCode2}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.country.isoCode3">Iso Code 3</span></dt>
+                <dd>
+                    <span>{{country.isoCode3}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.country.addressFormat">Address Format</span></dt>
+                <dd>
+                    <span>{{country.addressFormat}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.country.postCodeRequired">Post Code Required</span></dt>
+                <dd>
+                    <span>{{country.postCodeRequired}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.country.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{country.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.country.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{country.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.country.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{country.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.country.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{country.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.country.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{country.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/country', country.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

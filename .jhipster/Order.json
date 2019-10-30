@@ -1,0 +1,196 @@
+{
+    "name": "Order",
+    "fields": [
+        {
+            "fieldName": "invoiceNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "invoicePrefix",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingFirstname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingLastname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingCompany",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingAddress1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingAddress2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingCity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingPostcode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingCountry",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingZone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingAddressFormat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingMethod",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentFirstname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentLastname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentCompany",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentAddress1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentAddress2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentCity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentPostcode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentCountry",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentZone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentAddressFormat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentMethod",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "total",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "reward",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "commision",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "currencyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "currencyValue",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ip",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paymentFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "orderName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "orderProduct",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "porductLists"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "customer",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "customerId",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "currency",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "currencyId",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "orderStatus",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "orderStatusId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191030104017",
+    "entityTableName": "order",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

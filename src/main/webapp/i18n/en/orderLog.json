@@ -1,0 +1,67 @@
+{
+  "shopApp": {
+    "orderLog": {
+      "home": {
+        "title": "Order Logs",
+        "createLabel": "Create a new Order Log",
+        "createOrEditLabel": "Create or edit a Order Log",
+        "notFound": "No Order Logs found"
+      },
+      "created": "A new Order Log is created with identifier {{ param }}",
+      "updated": "A Order Log is updated with identifier {{ param }}",
+      "deleted": "A Order Log is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Order Log {{ id }}?"
+      },
+      "detail": {
+        "title": "Order Log"
+      },
+      "invoiceNo": "Invoice No",
+      "invocePerfix": "Invoce Perfix",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "email": "Email",
+      "telephone": "Telephone",
+      "fax": "Fax",
+      "shippingFristname": "Shipping Fristname",
+      "shippingLastname": "Shipping Lastname",
+      "shippingCompany": "Shipping Company",
+      "shippingAddress1": "Shipping Address 1",
+      "shippingAddress2": "Shipping Address 2",
+      "shippingCity": "Shipping City",
+      "shippingPostcode": "Shipping Postcode",
+      "shippingCountry": "Shipping Country",
+      "shippingZone": "Shipping Zone",
+      "shippingAddressFormat": "Shipping Address Format",
+      "shippingMethod": "Shipping Method",
+      "paymentFirstname": "Payment Firstname",
+      "paymentLastname": "Payment Lastname",
+      "paymentCompany": "Payment Company",
+      "paymentAddress1": "Payment Address 1",
+      "paymentAddress2": "Payment Address 2",
+      "paymentCity": "Payment City",
+      "paymentPostcode": "Payment Postcode",
+      "paymentCountry": "Payment Country",
+      "paymentZone": "Payment Zone",
+      "paymentAddressFormat": "Payment Address Format",
+      "paymentMethod": "Payment Method",
+      "comment": "Comment",
+      "total": "Total",
+      "reward": "Reward",
+      "commision": "Commision",
+      "currencyCode": "Currency Code",
+      "currencyValue": "Currency Value",
+      "ip": "Ip",
+      "paymentFlag": "Payment Flag",
+      "orderName": "Order Name",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date",
+      "customerId": "Customer Id",
+      "currencyId": "Currency Id",
+      "orderStatusId": "Order Status Id"
+    }
+  }
+}
