@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="language">
+            <h2><span jhiTranslate="shopApp.language.detail.title">Language</span> {{language.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.language.name">Name</span></dt>
+                <dd>
+                    <span>{{language.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.language.code">Code</span></dt>
+                <dd>
+                    <span>{{language.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.language.image">Image</span></dt>
+                <dd>
+                    <span>{{language.image}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.language.imagePath">Image Path</span></dt>
+                <dd>
+                    <span>{{language.imagePath}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.language.locale">Locale</span></dt>
+                <dd>
+                    <span>{{language.locale}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.language.sortOrder">Sort Order</span></dt>
+                <dd>
+                    <span>{{language.sortOrder}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.language.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{language.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.language.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{language.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.language.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{language.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.language.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{language.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.language.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{language.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/language', language.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

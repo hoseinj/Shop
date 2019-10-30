@@ -1,0 +1,101 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="address">
+            <h2><span jhiTranslate="shopApp.address.detail.title">Address</span> {{address.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.address.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{address.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{address.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.company">Company</span></dt>
+                <dd>
+                    <span>{{address.company}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.password">Password</span></dt>
+                <dd>
+                    <span>{{address.password}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.address1">Address 1</span></dt>
+                <dd>
+                    <span>{{address.address1}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.address2">Address 2</span></dt>
+                <dd>
+                    <span>{{address.address2}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.postcode">Postcode</span></dt>
+                <dd>
+                    <span>{{address.postcode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.city">City</span></dt>
+                <dd>
+                    <span>{{address.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.state">State</span></dt>
+                <dd>
+                    <span>{{address.state}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.addressType">Address Type</span></dt>
+                <dd>
+                    <span>{{address.addressType}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{address.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{address.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{address.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{address.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{address.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.customerId">Customer Id</span></dt>
+                <dd>
+                    <div *ngIf="address.customerIdId">
+                        <a [routerLink]="['/customer', address.customerIdId, 'view']">{{address.customerIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.countryId">Country Id</span></dt>
+                <dd>
+                    <div *ngIf="address.countryIdId">
+                        <a [routerLink]="['/country', address.countryIdId, 'view']">{{address.countryIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.address.zoneId">Zone Id</span></dt>
+                <dd>
+                    <div *ngIf="address.zoneIdId">
+                        <a [routerLink]="['/zone', address.zoneIdId, 'view']">{{address.zoneIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/address', address.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

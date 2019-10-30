@@ -1,0 +1,155 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-customer-heading" jhiTranslate="shopApp.customer.home.createOrEditLabel">Create or edit a Customer</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.firstName" for="field_firstName">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="field_firstName"
+                           formControlName="firstName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.lastName" for="field_lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                           formControlName="lastName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.username" for="field_username">Username</label>
+                    <input type="text" class="form-control" name="username" id="field_username"
+                           formControlName="username"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.password" for="field_password">Password</label>
+                    <input type="text" class="form-control" name="password" id="field_password"
+                           formControlName="password"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.mobile" for="field_mobile">Mobile</label>
+                    <input type="text" class="form-control" name="mobile" id="field_mobile"
+                           formControlName="mobile"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                           formControlName="address"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.city" for="field_city">City</label>
+                    <input type="text" class="form-control" name="city" id="field_city"
+                           formControlName="city"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.pincode" for="field_pincode">Pincode</label>
+                    <input type="text" class="form-control" name="pincode" id="field_pincode"
+                           formControlName="pincode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.avatar" for="field_avatar">Avatar</label>
+                    <input type="text" class="form-control" name="avatar" id="field_avatar"
+                           formControlName="avatar"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.avatarPath" for="field_avatarPath">Avatar Path</label>
+                    <input type="text" class="form-control" name="avatarPath" id="field_avatarPath"
+                           formControlName="avatarPath"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.mailStatus" for="field_mailStatus">Mail Status</label>
+                    <input type="number" class="form-control" name="mailStatus" id="field_mailStatus"
+                           formControlName="mailStatus"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.deleteFlag" for="field_deleteFlag">Delete Flag</label>
+                    <input type="number" class="form-control" name="deleteFlag" id="field_deleteFlag"
+                           formControlName="deleteFlag"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.lastlogin" for="field_lastlogin">Lastlogin</label>
+                    <input type="text" class="form-control" name="lastlogin" id="field_lastlogin"
+                           formControlName="lastlogin"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.newsletter" for="field_newsletter">Newsletter</label>
+                    <input type="number" class="form-control" name="newsletter" id="field_newsletter"
+                           formControlName="newsletter"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.safe" for="field_safe">Safe</label>
+                    <input type="number" class="form-control" name="safe" id="field_safe"
+                           formControlName="safe"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.ip" for="field_ip">Ip</label>
+                    <input type="text" class="form-control" name="ip" id="field_ip"
+                           formControlName="ip"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.isActive" for="field_isActive">Is Active</label>
+                    <input type="number" class="form-control" name="isActive" id="field_isActive"
+                           formControlName="isActive"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.createdBy" for="field_createdBy">Created By</label>
+                    <input type="number" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <input type="number" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                           formControlName="modifiedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.createdDate" for="field_createdDate">Created Date</label>
+                    <input type="text" class="form-control" name="createdDate" id="field_createdDate"
+                           formControlName="createdDate"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.modifiedDate" for="field_modifiedDate">Modified Date</label>
+                    <input type="text" class="form-control" name="modifiedDate" id="field_modifiedDate"
+                           formControlName="modifiedDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.countryId" for="field_countryId">Country Id</label>
+                    <select class="form-control" id="field_countryId" name="countryId" formControlName="countryIdId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="countryOption.id" *ngFor="let countryOption of countries; trackBy: trackCountryById">{{countryOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.zoneId" for="field_zoneId">Zone Id</label>
+                    <select class="form-control" id="field_zoneId" name="zoneId" formControlName="zoneIdId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="zoneOption.id" *ngFor="let zoneOption of zones; trackBy: trackZoneById">{{zoneOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="shopApp.customer.customerGroupId" for="field_customerGroupId">Customer Group Id</label>
+                    <select class="form-control" id="field_customerGroupId" name="customerGroupId" formControlName="customerGroupIdId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customerGroupOption.id" *ngFor="let customerGroupOption of customergroups; trackBy: trackCustomerGroupById">{{customerGroupOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,154 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="shopApp.migrations.home.title">Migrations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-migrations" [routerLink]="['/migrations/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="shopApp.migrations.home.createLabel">
+            Create a new Migrations
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="migrations?.length === 0">
+        <span jhiTranslate="shopApp.migrations.home.notFound">No migrations found</span>
+    </div>
+    <div class="table-responsive" *ngIf="migrations?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="timestamp"><span jhiTranslate="shopApp.migrations.timestamp">Timestamp</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="shopApp.migrations.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="invoiceNo"><span jhiTranslate="shopApp.migrations.invoiceNo">Invoice No</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="invoicePrefix"><span jhiTranslate="shopApp.migrations.invoicePrefix">Invoice Prefix</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="firstname"><span jhiTranslate="shopApp.migrations.firstname">Firstname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastname"><span jhiTranslate="shopApp.migrations.lastname">Lastname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="email"><span jhiTranslate="shopApp.migrations.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="telephone"><span jhiTranslate="shopApp.migrations.telephone">Telephone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="fax"><span jhiTranslate="shopApp.migrations.fax">Fax</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingFirstname"><span jhiTranslate="shopApp.migrations.shippingFirstname">Shipping Firstname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingLastname"><span jhiTranslate="shopApp.migrations.shippingLastname">Shipping Lastname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingCompany"><span jhiTranslate="shopApp.migrations.shippingCompany">Shipping Company</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingAddress1"><span jhiTranslate="shopApp.migrations.shippingAddress1">Shipping Address 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingAddress2"><span jhiTranslate="shopApp.migrations.shippingAddress2">Shipping Address 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingCity"><span jhiTranslate="shopApp.migrations.shippingCity">Shipping City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingPostcode"><span jhiTranslate="shopApp.migrations.shippingPostcode">Shipping Postcode</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingCountry"><span jhiTranslate="shopApp.migrations.shippingCountry">Shipping Country</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingZone"><span jhiTranslate="shopApp.migrations.shippingZone">Shipping Zone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingAddressFormat"><span jhiTranslate="shopApp.migrations.shippingAddressFormat">Shipping Address Format</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="shippingMethod"><span jhiTranslate="shopApp.migrations.shippingMethod">Shipping Method</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentFirstname"><span jhiTranslate="shopApp.migrations.paymentFirstname">Payment Firstname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentLastname"><span jhiTranslate="shopApp.migrations.paymentLastname">Payment Lastname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentCompany"><span jhiTranslate="shopApp.migrations.paymentCompany">Payment Company</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentAddress1"><span jhiTranslate="shopApp.migrations.paymentAddress1">Payment Address 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentAddress2"><span jhiTranslate="shopApp.migrations.paymentAddress2">Payment Address 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentCity"><span jhiTranslate="shopApp.migrations.paymentCity">Payment City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentPostcode"><span jhiTranslate="shopApp.migrations.paymentPostcode">Payment Postcode</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentCountry"><span jhiTranslate="shopApp.migrations.paymentCountry">Payment Country</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentZone"><span jhiTranslate="shopApp.migrations.paymentZone">Payment Zone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentAddressFormat"><span jhiTranslate="shopApp.migrations.paymentAddressFormat">Payment Address Format</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentMethod"><span jhiTranslate="shopApp.migrations.paymentMethod">Payment Method</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="comment"><span jhiTranslate="shopApp.migrations.comment">Comment</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="total"><span jhiTranslate="shopApp.migrations.total">Total</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="reward"><span jhiTranslate="shopApp.migrations.reward">Reward</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="commision"><span jhiTranslate="shopApp.migrations.commision">Commision</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="currencyCode"><span jhiTranslate="shopApp.migrations.currencyCode">Currency Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="currencyValue"><span jhiTranslate="shopApp.migrations.currencyValue">Currency Value</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ip"><span jhiTranslate="shopApp.migrations.ip">Ip</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="paymentFlag"><span jhiTranslate="shopApp.migrations.paymentFlag">Payment Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="orderName"><span jhiTranslate="shopApp.migrations.orderName">Order Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isActive"><span jhiTranslate="shopApp.migrations.isActive">Is Active</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdBy"><span jhiTranslate="shopApp.migrations.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedBy"><span jhiTranslate="shopApp.migrations.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdDate"><span jhiTranslate="shopApp.migrations.createdDate">Created Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedDate"><span jhiTranslate="shopApp.migrations.modifiedDate">Modified Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let migrations of migrations ;trackBy: trackId">
+                <td><a [routerLink]="['/migrations', migrations.id, 'view' ]">{{migrations.id}}</a></td>
+                <td>{{migrations.timestamp}}</td>
+                <td>{{migrations.name}}</td>
+                <td>{{migrations.invoiceNo}}</td>
+                <td>{{migrations.invoicePrefix}}</td>
+                <td>{{migrations.firstname}}</td>
+                <td>{{migrations.lastname}}</td>
+                <td>{{migrations.email}}</td>
+                <td>{{migrations.telephone}}</td>
+                <td>{{migrations.fax}}</td>
+                <td>{{migrations.shippingFirstname}}</td>
+                <td>{{migrations.shippingLastname}}</td>
+                <td>{{migrations.shippingCompany}}</td>
+                <td>{{migrations.shippingAddress1}}</td>
+                <td>{{migrations.shippingAddress2}}</td>
+                <td>{{migrations.shippingCity}}</td>
+                <td>{{migrations.shippingPostcode}}</td>
+                <td>{{migrations.shippingCountry}}</td>
+                <td>{{migrations.shippingZone}}</td>
+                <td>{{migrations.shippingAddressFormat}}</td>
+                <td>{{migrations.shippingMethod}}</td>
+                <td>{{migrations.paymentFirstname}}</td>
+                <td>{{migrations.paymentLastname}}</td>
+                <td>{{migrations.paymentCompany}}</td>
+                <td>{{migrations.paymentAddress1}}</td>
+                <td>{{migrations.paymentAddress2}}</td>
+                <td>{{migrations.paymentCity}}</td>
+                <td>{{migrations.paymentPostcode}}</td>
+                <td>{{migrations.paymentCountry}}</td>
+                <td>{{migrations.paymentZone}}</td>
+                <td>{{migrations.paymentAddressFormat}}</td>
+                <td>{{migrations.paymentMethod}}</td>
+                <td>{{migrations.comment}}</td>
+                <td>{{migrations.total}}</td>
+                <td>{{migrations.reward}}</td>
+                <td>{{migrations.commision}}</td>
+                <td>{{migrations.currencyCode}}</td>
+                <td>{{migrations.currencyValue}}</td>
+                <td>{{migrations.ip}}</td>
+                <td>{{migrations.paymentFlag}}</td>
+                <td>{{migrations.orderName}}</td>
+                <td>{{migrations.isActive}}</td>
+                <td>{{migrations.createdBy}}</td>
+                <td>{{migrations.modifiedBy}}</td>
+                <td>{{migrations.createdDate}}</td>
+                <td>{{migrations.modifiedDate}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/migrations', migrations.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/migrations', migrations.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/migrations', { outlets: { popup: migrations.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="migrations?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

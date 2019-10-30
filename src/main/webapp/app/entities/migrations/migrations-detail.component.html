@@ -1,0 +1,203 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="migrations">
+            <h2><span jhiTranslate="shopApp.migrations.detail.title">Migrations</span> {{migrations.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.migrations.timestamp">Timestamp</span></dt>
+                <dd>
+                    <span>{{migrations.timestamp}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.name">Name</span></dt>
+                <dd>
+                    <span>{{migrations.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.invoiceNo">Invoice No</span></dt>
+                <dd>
+                    <span>{{migrations.invoiceNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.invoicePrefix">Invoice Prefix</span></dt>
+                <dd>
+                    <span>{{migrations.invoicePrefix}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.firstname">Firstname</span></dt>
+                <dd>
+                    <span>{{migrations.firstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.lastname">Lastname</span></dt>
+                <dd>
+                    <span>{{migrations.lastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.email">Email</span></dt>
+                <dd>
+                    <span>{{migrations.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{migrations.telephone}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.fax">Fax</span></dt>
+                <dd>
+                    <span>{{migrations.fax}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.shippingFirstname">Shipping Firstname</span></dt>
+                <dd>
+                    <span>{{migrations.shippingFirstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.shippingLastname">Shipping Lastname</span></dt>
+                <dd>
+                    <span>{{migrations.shippingLastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.shippingCompany">Shipping Company</span></dt>
+                <dd>
+                    <span>{{migrations.shippingCompany}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.shippingAddress1">Shipping Address 1</span></dt>
+                <dd>
+                    <span>{{migrations.shippingAddress1}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.shippingAddress2">Shipping Address 2</span></dt>
+                <dd>
+                    <span>{{migrations.shippingAddress2}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.shippingCity">Shipping City</span></dt>
+                <dd>
+                    <span>{{migrations.shippingCity}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.shippingPostcode">Shipping Postcode</span></dt>
+                <dd>
+                    <span>{{migrations.shippingPostcode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.shippingCountry">Shipping Country</span></dt>
+                <dd>
+                    <span>{{migrations.shippingCountry}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.shippingZone">Shipping Zone</span></dt>
+                <dd>
+                    <span>{{migrations.shippingZone}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.shippingAddressFormat">Shipping Address Format</span></dt>
+                <dd>
+                    <span>{{migrations.shippingAddressFormat}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.shippingMethod">Shipping Method</span></dt>
+                <dd>
+                    <span>{{migrations.shippingMethod}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentFirstname">Payment Firstname</span></dt>
+                <dd>
+                    <span>{{migrations.paymentFirstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentLastname">Payment Lastname</span></dt>
+                <dd>
+                    <span>{{migrations.paymentLastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentCompany">Payment Company</span></dt>
+                <dd>
+                    <span>{{migrations.paymentCompany}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentAddress1">Payment Address 1</span></dt>
+                <dd>
+                    <span>{{migrations.paymentAddress1}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentAddress2">Payment Address 2</span></dt>
+                <dd>
+                    <span>{{migrations.paymentAddress2}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentCity">Payment City</span></dt>
+                <dd>
+                    <span>{{migrations.paymentCity}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentPostcode">Payment Postcode</span></dt>
+                <dd>
+                    <span>{{migrations.paymentPostcode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentCountry">Payment Country</span></dt>
+                <dd>
+                    <span>{{migrations.paymentCountry}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentZone">Payment Zone</span></dt>
+                <dd>
+                    <span>{{migrations.paymentZone}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentAddressFormat">Payment Address Format</span></dt>
+                <dd>
+                    <span>{{migrations.paymentAddressFormat}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentMethod">Payment Method</span></dt>
+                <dd>
+                    <span>{{migrations.paymentMethod}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.comment">Comment</span></dt>
+                <dd>
+                    <span>{{migrations.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.total">Total</span></dt>
+                <dd>
+                    <span>{{migrations.total}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.reward">Reward</span></dt>
+                <dd>
+                    <span>{{migrations.reward}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.commision">Commision</span></dt>
+                <dd>
+                    <span>{{migrations.commision}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{migrations.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.currencyValue">Currency Value</span></dt>
+                <dd>
+                    <span>{{migrations.currencyValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.ip">Ip</span></dt>
+                <dd>
+                    <span>{{migrations.ip}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.paymentFlag">Payment Flag</span></dt>
+                <dd>
+                    <span>{{migrations.paymentFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.orderName">Order Name</span></dt>
+                <dd>
+                    <span>{{migrations.orderName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{migrations.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{migrations.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{migrations.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{migrations.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.migrations.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{migrations.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/migrations', migrations.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

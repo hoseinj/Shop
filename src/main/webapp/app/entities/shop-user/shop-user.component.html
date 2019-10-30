@@ -1,0 +1,110 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="shopApp.shopUser.home.title">Shop Users</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-shop-user" [routerLink]="['/shop-user/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="shopApp.shopUser.home.createLabel">
+            Create a new Shop User
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="shopUsers?.length === 0">
+        <span jhiTranslate="shopApp.shopUser.home.notFound">No shopUsers found</span>
+    </div>
+    <div class="table-responsive" *ngIf="shopUsers?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="username"><span jhiTranslate="shopApp.shopUser.username">Username</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="password"><span jhiTranslate="shopApp.shopUser.password">Password</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="firstName"><span jhiTranslate="shopApp.shopUser.firstName">First Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastName"><span jhiTranslate="shopApp.shopUser.lastName">Last Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="email"><span jhiTranslate="shopApp.shopUser.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="avatar"><span jhiTranslate="shopApp.shopUser.avatar">Avatar</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="avatarPath"><span jhiTranslate="shopApp.shopUser.avatarPath">Avatar Path</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="code"><span jhiTranslate="shopApp.shopUser.code">Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ip"><span jhiTranslate="shopApp.shopUser.ip">Ip</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="address"><span jhiTranslate="shopApp.shopUser.address">Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="phoneNumber"><span jhiTranslate="shopApp.shopUser.phoneNumber">Phone Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="shopApp.shopUser.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isActive"><span jhiTranslate="shopApp.shopUser.isActive">Is Active</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdBy"><span jhiTranslate="shopApp.shopUser.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedBy"><span jhiTranslate="shopApp.shopUser.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="createdDate"><span jhiTranslate="shopApp.shopUser.createdDate">Created Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="modifiedDate"><span jhiTranslate="shopApp.shopUser.modifiedDate">Modified Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="userGroupIdId"><span jhiTranslate="shopApp.shopUser.userGroupId">User Group Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="userGroupId"><span jhiTranslate="shopApp.shopUser.userGroup">User Group</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let shopUser of shopUsers ;trackBy: trackId">
+                <td><a [routerLink]="['/shop-user', shopUser.id, 'view' ]">{{shopUser.id}}</a></td>
+                <td>{{shopUser.username}}</td>
+                <td>{{shopUser.password}}</td>
+                <td>{{shopUser.firstName}}</td>
+                <td>{{shopUser.lastName}}</td>
+                <td>{{shopUser.email}}</td>
+                <td>{{shopUser.avatar}}</td>
+                <td>{{shopUser.avatarPath}}</td>
+                <td>{{shopUser.code}}</td>
+                <td>{{shopUser.ip}}</td>
+                <td>{{shopUser.address}}</td>
+                <td>{{shopUser.phoneNumber}}</td>
+                <td>{{shopUser.name}}</td>
+                <td>{{shopUser.isActive}}</td>
+                <td>{{shopUser.createdBy}}</td>
+                <td>{{shopUser.modifiedBy}}</td>
+                <td>{{shopUser.createdDate}}</td>
+                <td>{{shopUser.modifiedDate}}</td>
+                <td>
+                    <div *ngIf="shopUser.userGroupIdId">
+                        <a [routerLink]="['/user-group', shopUser.userGroupIdId , 'view' ]" >{{shopUser.userGroupIdId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="shopUser.userGroupId">
+                        <a [routerLink]="['/user-group', shopUser.userGroupId , 'view' ]" >{{shopUser.userGroupId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/shop-user', shopUser.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/shop-user', shopUser.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/shop-user', { outlets: { popup: shopUser.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="shopUsers?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

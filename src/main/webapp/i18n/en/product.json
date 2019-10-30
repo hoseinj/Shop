@@ -1,0 +1,58 @@
+{
+  "shopApp": {
+    "product": {
+      "home": {
+        "title": "Products",
+        "createLabel": "Create a new Product",
+        "createOrEditLabel": "Create or edit a Product",
+        "notFound": "No Products found"
+      },
+      "created": "A new Product is created with identifier {{ param }}",
+      "updated": "A Product is updated with identifier {{ param }}",
+      "deleted": "A Product is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product {{ id }}?"
+      },
+      "detail": {
+        "title": "Product"
+      },
+      "sku": "Sku",
+      "upc": "Upc",
+      "quantity": "Quantity",
+      "image": "Image",
+      "imagePath": "Image Path",
+      "shipping": "Shipping",
+      "price": "Price",
+      "dateAvailable": "Date Available",
+      "sortOrder": "Sort Order",
+      "name": "Name",
+      "description": "Description",
+      "amount": "Amount",
+      "metaTagTitle": "Meta Tag Title",
+      "metaTagDescription": "Meta Tag Description",
+      "metaTagKeyword": "Meta Tag Keyword",
+      "discount": "Discount",
+      "subtractStock": "Subtract Stock",
+      "minimumQuantity": "Minimum Quantity",
+      "location": "Location",
+      "wishlistStatus": "Wishlist Status",
+      "deletFlag": "Delet Flag",
+      "isFeatured": "Is Featured",
+      "rating": "Rating",
+      "condition": "Condition",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date",
+      "categories": "Categories",
+      "productImages": "Product Images",
+      "wishLists": "Wish Lists",
+      "productRelatedS": "Product Related S",
+      "productRatings": "Product Ratings",
+      "orderProducts": "Order Products",
+      "stockStatusid": "Stock Statusid",
+      "manufacturerId": "Manufacturer Id"
+    }
+  }
+}

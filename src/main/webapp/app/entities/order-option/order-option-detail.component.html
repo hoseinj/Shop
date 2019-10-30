@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orderOption">
+            <h2><span jhiTranslate="shopApp.orderOption.detail.title">Order Option</span> {{orderOption.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.orderOption.name">Name</span></dt>
+                <dd>
+                    <span>{{orderOption.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderOption.value">Value</span></dt>
+                <dd>
+                    <span>{{orderOption.value}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderOption.type">Type</span></dt>
+                <dd>
+                    <span>{{orderOption.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderOption.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{orderOption.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderOption.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{orderOption.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderOption.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{orderOption.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderOption.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{orderOption.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.orderOption.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{orderOption.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-option', orderOption.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

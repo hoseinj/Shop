@@ -1,0 +1,41 @@
+{
+  "shopApp": {
+    "shopUser": {
+      "home": {
+        "title": "Shop Users",
+        "createLabel": "Create a new Shop User",
+        "createOrEditLabel": "Create or edit a Shop User",
+        "notFound": "No Shop Users found"
+      },
+      "created": "A new Shop User is created with identifier {{ param }}",
+      "updated": "A Shop User is updated with identifier {{ param }}",
+      "deleted": "A Shop User is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Shop User {{ id }}?"
+      },
+      "detail": {
+        "title": "Shop User"
+      },
+      "username": "Username",
+      "password": "Password",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "avatar": "Avatar",
+      "avatarPath": "Avatar Path",
+      "code": "Code",
+      "ip": "Ip",
+      "address": "Address",
+      "phoneNumber": "Phone Number",
+      "name": "Name",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date",
+      "accessToken": "Access Token",
+      "userGroupId": "User Group Id",
+      "userGroup": "User Group"
+    }
+  }
+}

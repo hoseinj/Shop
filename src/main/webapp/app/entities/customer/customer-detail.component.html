@@ -1,0 +1,129 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customer">
+            <h2><span jhiTranslate="shopApp.customer.detail.title">Customer</span> {{customer.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.customer.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{customer.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{customer.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.username">Username</span></dt>
+                <dd>
+                    <span>{{customer.username}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.email">Email</span></dt>
+                <dd>
+                    <span>{{customer.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.password">Password</span></dt>
+                <dd>
+                    <span>{{customer.password}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.mobile">Mobile</span></dt>
+                <dd>
+                    <span>{{customer.mobile}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.address">Address</span></dt>
+                <dd>
+                    <span>{{customer.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.city">City</span></dt>
+                <dd>
+                    <span>{{customer.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.pincode">Pincode</span></dt>
+                <dd>
+                    <span>{{customer.pincode}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.avatar">Avatar</span></dt>
+                <dd>
+                    <span>{{customer.avatar}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.avatarPath">Avatar Path</span></dt>
+                <dd>
+                    <span>{{customer.avatarPath}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.mailStatus">Mail Status</span></dt>
+                <dd>
+                    <span>{{customer.mailStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.deleteFlag">Delete Flag</span></dt>
+                <dd>
+                    <span>{{customer.deleteFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.lastlogin">Lastlogin</span></dt>
+                <dd>
+                    <span>{{customer.lastlogin}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.newsletter">Newsletter</span></dt>
+                <dd>
+                    <span>{{customer.newsletter}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.safe">Safe</span></dt>
+                <dd>
+                    <span>{{customer.safe}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.ip">Ip</span></dt>
+                <dd>
+                    <span>{{customer.ip}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{customer.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{customer.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{customer.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{customer.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{customer.modifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.countryId">Country Id</span></dt>
+                <dd>
+                    <div *ngIf="customer.countryIdId">
+                        <a [routerLink]="['/country', customer.countryIdId, 'view']">{{customer.countryIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.zoneId">Zone Id</span></dt>
+                <dd>
+                    <div *ngIf="customer.zoneIdId">
+                        <a [routerLink]="['/zone', customer.zoneIdId, 'view']">{{customer.zoneIdId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="shopApp.customer.customerGroupId">Customer Group Id</span></dt>
+                <dd>
+                    <div *ngIf="customer.customerGroupIdId">
+                        <a [routerLink]="['/customer-group', customer.customerGroupIdId, 'view']">{{customer.customerGroupIdId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customer', customer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contact">
+            <h2><span jhiTranslate="shopApp.contact.detail.title">Contact</span> {{contact.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="shopApp.contact.name">Name</span></dt>
+                <dd>
+                    <span>{{contact.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.contact.email">Email</span></dt>
+                <dd>
+                    <span>{{contact.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.contact.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{contact.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.contact.message">Message</span></dt>
+                <dd>
+                    <span>{{contact.message}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.contact.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{contact.isActive}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.contact.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{contact.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.contact.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{contact.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.contact.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{contact.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="shopApp.contact.modifiedDate">Modified Date</span></dt>
+                <dd>
+                    <span>{{contact.modifiedDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contact', contact.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

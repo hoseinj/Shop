@@ -1,0 +1,27 @@
+{
+  "shopApp": {
+    "productTag": {
+      "home": {
+        "title": "Product Tags",
+        "createLabel": "Create a new Product Tag",
+        "createOrEditLabel": "Create or edit a Product Tag",
+        "notFound": "No Product Tags found"
+      },
+      "created": "A new Product Tag is created with identifier {{ param }}",
+      "updated": "A Product Tag is updated with identifier {{ param }}",
+      "deleted": "A Product Tag is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Tag {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Tag"
+      },
+      "productTagname": "Product Tagname",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "modifiedBy": "Modified By",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date"
+    }
+  }
+}
